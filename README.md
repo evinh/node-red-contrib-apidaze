@@ -7,7 +7,7 @@ Apidaze is the platform powering the Voip Innovations Programmable Communication
 
 With this REST API, you will be able to do the following:
 
-- Place and manage calls, send SMS, and send faxes 
+- Place and manage calls, send SMS, and send faxes
 
 - Manage your voice prompts, retrieve recorded conversations, etc.
 
@@ -62,46 +62,44 @@ Only one external script is allowed per domain.
 
 - CallsByApiKeyGet
 
-    TODO: Add Description
+    Gets list of active calls with UUID of each call.
 
 - CallsByApiKeyPost
 
-    TODO: Add Description
+    Creates a call (click-to-call use case).
 
 - CallsByApiKeyAndUuidGet
 
-    TODO: Add Description
+    Get an active call by UUID.
 
 - CallsByApiKeyAndUuidPost
 
-    TODO: Add Description
+    Transfer a call.
 
 - MediafilesByApiKeyGet
 
-    TODO: Add Description
+    Get a list of media files.
 
 - MediafilesByApiKeyPost
 
-    TODO: Add Description
+    Get a specific media file.
 
 - MediafilesByApiKeyDelete
 
-    TODO: Add Description
+    Delete a media file.
 
 - RecordingsByApiKeyGet
 
-    TODO: Add Description
+    Get a list of recordings.
 
 - RecordingsByApiKeyAndFileNameGet
 
-    TODO: Add Description
+    Get a specific recording.
 
 - RecordingsByApiKeyAndFileNameDelete
 
-    TODO: Add Description
+    Delete a recording.
 
 - ValidatesByApiKeyGet
 
-    Validates your API key and secret.
-
-
+    Validate your apikey and secret.
