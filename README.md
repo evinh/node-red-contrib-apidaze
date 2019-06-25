@@ -58,7 +58,7 @@ Only one external script is allowed per domain.
 
 - SmsSendPost
 
-    For an Inbound SMS example request to your configured appliction, please see this example [here](#430697e4-bfa8-ba71-926b-c7c806a1245d)
+    Sends a SMS.
 
 - CallsByApiKeyGet
 
