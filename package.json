@@ -1,0 +1,83 @@
+{
+  "_args": [
+    [
+      "node-red-contrib-apidaze-rest-api",
+      "/root/.node-red"
+    ]
+  ],
+  "_from": "node-red-contrib-apidaze-rest-api@latest",
+  "_hasShrinkwrap": false,
+  "_id": "node-red-contrib-apidaze-rest-api@1.0.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/node-red-contrib-apidaze-rest-api",
+  "_nodeVersion": "8.10.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/node-red-contrib-apidaze-rest-api_1.0.0_1561482844052_0.5443957769778032"
+  },
+  "_npmUser": {
+    "email": "evin.hunt@gmail.com",
+    "name": "evinh"
+  },
+  "_npmVersion": "3.5.2",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "node-red-contrib-apidaze-rest-api",
+    "raw": "node-red-contrib-apidaze-rest-api",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_shasum": "946cefc1a94b4f6abb25b2b3f016ac6abe74fd65",
+  "_shrinkwrap": null,
+  "_spec": "node-red-contrib-apidaze-rest-api",
+  "_where": "/root/.node-red",
+  "author": "",
+  "dependencies": {
+    "file-type": "^10.7.1",
+    "q": "1.5.1",
+    "request": "2.83.0"
+  },
+  "description": "Node-RED node for apidaze-rest-api",
+  "devDependencies": {
+    "node-red": "0.18.7",
+    "node-red-node-test-helper": "0.1.8"
+  },
+  "directories": {},
+  "dist": {
+    "fileCount": 12,
+    "integrity": "sha512-ef/gy3IU1a9i0ktbpsN5ij1RWukWDpeTjaCUgjiw9PXzCtwjkIA8cpNlIe/g8AXzb05/sfVE2iGIbdOtlz4Dfw==",
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdElZcCRA9TVsSAnZWagAA/3sP+wSLQcChakLA8zeHfQqQ\nVd/BIeCbHN9hEAEJo5Vj7BglrzXJ6kFCY6Gp5HJPeymZ1VYLTfje0oiVMJG6\ncfkGIKWZzJ8o/1yqDOtTAncYgdZ2wro/kGqOD7MgQsLaMs2LwJUSIN0zi32k\n0BISWJOKwyiFLct7SrBuAkI+G2tmR/4Z0ENkO6IBUHcrtVo5KIcy8lr4U4Oz\nz5NOmh3ORoZU87QaZUilA1NZGAqNfzNfx3vhOY1CbSSnAL/y4CIZW21WaOuf\nPm0BxxaFQ/apdcgCZ26Ic18GB3+d1ISfN4CxQM5Ywq/Oc5VKJ0uOtZRkKtf1\nObScuY8YDa/OQhQX2xcsl/IAKTG2tomn245i0yLjcBc2z2zNszaAFCK7T6mm\ndJ94+zs03qyZ+EjOeQ5Yz5SyTZ40jjAyy18U0VaWqlEb5J/QkMpg76oCoH6I\n7XtSrzvxFYdbU4p9L229dnKZ7Q7NL7xbfXIgeswn7Brg2QDvJ5KtJVkHJtS+\nI3OYeJifjjsULPug6fkn5Wb44he+SNacX8+UaSHnFxQGZG2HOk5awrVCbpxg\nE9TC4C+9akhLn+7yvb3SebzzoiSb0U+ZNbmdzrk+/tMOnjbMcl3ucN+c+gc7\nuX4Fhaim2rAs6lT4JO2CFGQml/d2vPFa4wbMCfVroYszCSidBFNntQa+ulxe\nMtZt\r\n=KSEu\r\n-----END PGP SIGNATURE-----\r\n",
+    "shasum": "946cefc1a94b4f6abb25b2b3f016ac6abe74fd65",
+    "tarball": "https://registry.npmjs.org/node-red-contrib-apidaze-rest-api/-/node-red-contrib-apidaze-rest-api-1.0.0.tgz",
+    "unpackedSize": 236076
+  },
+  "keywords": [
+    "node-red-nodegen"
+  ],
+  "license": "Apache-2.0",
+  "main": "node.js",
+  "maintainers": [
+    {
+      "name": "evinh",
+      "email": "evin.hunt@gmail.com"
+    }
+  ],
+  "name": "node-red-contrib-apidaze-rest-api",
+  "node-red": {
+    "nodes": {
+      "apidaze-rest-api": "node.js"
+    }
+  },
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "scripts": {
+    "test": "mocha \"test/**/*_spec.js\""
+  },
+  "version": "1.0.0"
+}

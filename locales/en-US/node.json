@@ -1,0 +1,57 @@
+{
+    "ApidazeRestApi": {
+        "label": {
+            "service": "Service",
+            "method": "Method",
+            "host": "Host",
+            "header": "Header",
+            "value": "Value",
+            "isQuery": "isQuery"
+        },
+        "status": {
+            "requesting": "requesting"
+        },
+        "parameters": {
+            "ExternalscriptsGet": "ExternalscriptsGet",
+            "apiKey": "apiKey",
+            "apiSecret": "apiSecret",
+            "ExternalscriptsByApiKeyPost": "ExternalscriptsByApiKeyPost",
+            "name": "name",
+            "url": "url",
+            "ExternalscriptsByApiKeyAndScriptIdGet": "ExternalscriptsByApiKeyAndScriptIdGet",
+            "scriptId": "scriptId",
+            "ExternalscriptsByApiKeyAndScriptIdPut": "ExternalscriptsByApiKeyAndScriptIdPut",
+            "UnnammedEndpointDelete": "UnnammedEndpointDelete",
+            "contentType": "contentType",
+            "UnnammedEndpointGet": "UnnammedEndpointGet",
+            "destinationNumber": "destinationNumber",
+            "callerUsername": "callerUsername",
+            "sessionId": "sessionId",
+            "callerIdNumber": "callerIdNumber",
+            "uuid": "uuid",
+            "UnnammedEndpointPost": "UnnammedEndpointPost",
+            "body": "body",
+            "SmsSendPost": "SmsSendPost",
+            "from": "from",
+            "to": "to",
+            "CallsByApiKeyGet": "CallsByApiKeyGet",
+            "CallsByApiKeyPost": "CallsByApiKeyPost",
+            "callerid": "callerid",
+            "origin": "origin",
+            "destination": "destination",
+            "type": "type",
+            "CallsByApiKeyAndUuidGet": "CallsByApiKeyAndUuidGet",
+            "CallsByApiKeyAndUuidPost": "CallsByApiKeyAndUuidPost",
+            "MediafilesByApiKeyGet": "MediafilesByApiKeyGet",
+            "MediafilesByApiKeyPost": "MediafilesByApiKeyPost",
+            "mediafile": "mediafile",
+            "MediafilesByApiKeyDelete": "MediafilesByApiKeyDelete",
+            "RecordingsByApiKeyGet": "RecordingsByApiKeyGet",
+            "RecordingsByApiKeyAndFileNameGet": "RecordingsByApiKeyAndFileNameGet",
+            "fileName": "fileName",
+            "RecordingsByApiKeyAndFileNameDelete": "RecordingsByApiKeyAndFileNameDelete",
+            "ValidatesByApiKeyGet": "ValidatesByApiKeyGet",
+            "optionalParameters": "Options"
+        }
+    }
+}

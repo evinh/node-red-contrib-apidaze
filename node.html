@@ -1,0 +1,1685 @@
+<script type="text/javascript">
+    RED.nodes.registerType('apidaze-rest-api', {
+        category: 'function',
+        color: '#89bf04',
+        defaults: {
+            method: { value: "", required: true },
+            ExternalscriptsGet_apiKey: { value: "" },
+            ExternalscriptsGet_apiKeyType: { value: "str" },
+            ExternalscriptsGet_apiSecret: { value: "" },
+            ExternalscriptsGet_apiSecretType: { value: "str" },
+            ExternalscriptsByApiKeyPost_apiKey: { value: "" },
+            ExternalscriptsByApiKeyPost_apiKeyType: { value: "str" },
+            ExternalscriptsByApiKeyPost_apiSecret: { value: "" },
+            ExternalscriptsByApiKeyPost_apiSecretType: { value: "str" },
+            ExternalscriptsByApiKeyPost_name: { value: "" },
+            ExternalscriptsByApiKeyPost_nameType: { value: "str" },
+            ExternalscriptsByApiKeyPost_url: { value: "" },
+            ExternalscriptsByApiKeyPost_urlType: { value: "str" },
+            ExternalscriptsByApiKeyAndScriptIdGet_apiKey: { value: "" },
+            ExternalscriptsByApiKeyAndScriptIdGet_apiKeyType: { value: "str" },
+            ExternalscriptsByApiKeyAndScriptIdGet_apiSecret: { value: "" },
+            ExternalscriptsByApiKeyAndScriptIdGet_apiSecretType: { value: "str" },
+            ExternalscriptsByApiKeyAndScriptIdGet_scriptId: { value: "" },
+            ExternalscriptsByApiKeyAndScriptIdGet_scriptIdType: { value: "str" },
+            ExternalscriptsByApiKeyAndScriptIdPut_apiKey: { value: "" },
+            ExternalscriptsByApiKeyAndScriptIdPut_apiKeyType: { value: "str" },
+            ExternalscriptsByApiKeyAndScriptIdPut_apiSecret: { value: "" },
+            ExternalscriptsByApiKeyAndScriptIdPut_apiSecretType: { value: "str" },
+            ExternalscriptsByApiKeyAndScriptIdPut_scriptId: { value: "" },
+            ExternalscriptsByApiKeyAndScriptIdPut_scriptIdType: { value: "str" },
+            ExternalscriptsByApiKeyAndScriptIdPut_name: { value: "" },
+            ExternalscriptsByApiKeyAndScriptIdPut_nameType: { value: "str" },
+            ExternalscriptsByApiKeyAndScriptIdPut_url: { value: "" },
+            ExternalscriptsByApiKeyAndScriptIdPut_urlType: { value: "str" },
+            UnnammedEndpointDelete_apiKey: { value: "" },
+            UnnammedEndpointDelete_apiKeyType: { value: "str" },
+            UnnammedEndpointDelete_apiSecret: { value: "" },
+            UnnammedEndpointDelete_apiSecretType: { value: "str" },
+            UnnammedEndpointDelete_scriptId: { value: "" },
+            UnnammedEndpointDelete_scriptIdType: { value: "str" },
+            UnnammedEndpointDelete_contentType: { value: "" },
+            UnnammedEndpointDelete_contentTypeType: { value: "str" },
+            UnnammedEndpointGet_destinationNumber: { value: "" },
+            UnnammedEndpointGet_destinationNumberType: { value: "str" },
+            UnnammedEndpointGet_callerUsername: { value: "" },
+            UnnammedEndpointGet_callerUsernameType: { value: "str" },
+            UnnammedEndpointGet_sessionId: { value: "" },
+            UnnammedEndpointGet_sessionIdType: { value: "str" },
+            UnnammedEndpointGet_callerIdNumber: { value: "" },
+            UnnammedEndpointGet_callerIdNumberType: { value: "str" },
+            UnnammedEndpointGet_uuid: { value: "" },
+            UnnammedEndpointGet_uuidType: { value: "str" },
+            UnnammedEndpointGet_url: { value: "" },
+            UnnammedEndpointGet_urlType: { value: "str" },
+            UnnammedEndpointPost_contentType: { value: "" },
+            UnnammedEndpointPost_contentTypeType: { value: "str" },
+            UnnammedEndpointPost_body: { value: "" },
+            UnnammedEndpointPost_bodyType: { value: "str" },
+            SmsSendPost_apiKey: { value: "" },
+            SmsSendPost_apiKeyType: { value: "str" },
+            SmsSendPost_apiSecret: { value: "" },
+            SmsSendPost_apiSecretType: { value: "str" },
+            SmsSendPost_from: { value: "" },
+            SmsSendPost_fromType: { value: "str" },
+            SmsSendPost_to: { value: "" },
+            SmsSendPost_toType: { value: "str" },
+            SmsSendPost_body: { value: "" },
+            SmsSendPost_bodyType: { value: "str" },
+            CallsByApiKeyGet_apiKey: { value: "" },
+            CallsByApiKeyGet_apiKeyType: { value: "str" },
+            CallsByApiKeyGet_apiSecret: { value: "" },
+            CallsByApiKeyGet_apiSecretType: { value: "str" },
+            CallsByApiKeyPost_apiKey: { value: "" },
+            CallsByApiKeyPost_apiKeyType: { value: "str" },
+            CallsByApiKeyPost_apiSecret: { value: "" },
+            CallsByApiKeyPost_apiSecretType: { value: "str" },
+            CallsByApiKeyPost_callerid: { value: "" },
+            CallsByApiKeyPost_calleridType: { value: "str" },
+            CallsByApiKeyPost_origin: { value: "" },
+            CallsByApiKeyPost_originType: { value: "str" },
+            CallsByApiKeyPost_destination: { value: "" },
+            CallsByApiKeyPost_destinationType: { value: "str" },
+            CallsByApiKeyPost_type: { value: "" },
+            CallsByApiKeyPost_typeType: { value: "str" },
+            CallsByApiKeyAndUuidGet_apiKey: { value: "" },
+            CallsByApiKeyAndUuidGet_apiKeyType: { value: "str" },
+            CallsByApiKeyAndUuidGet_apiSecret: { value: "" },
+            CallsByApiKeyAndUuidGet_apiSecretType: { value: "str" },
+            CallsByApiKeyAndUuidGet_uuid: { value: "" },
+            CallsByApiKeyAndUuidGet_uuidType: { value: "str" },
+            CallsByApiKeyAndUuidPost_apiKey: { value: "" },
+            CallsByApiKeyAndUuidPost_apiKeyType: { value: "str" },
+            CallsByApiKeyAndUuidPost_apiSecret: { value: "" },
+            CallsByApiKeyAndUuidPost_apiSecretType: { value: "str" },
+            CallsByApiKeyAndUuidPost_url: { value: "" },
+            CallsByApiKeyAndUuidPost_urlType: { value: "str" },
+            CallsByApiKeyAndUuidPost_uuid: { value: "" },
+            CallsByApiKeyAndUuidPost_uuidType: { value: "str" },
+            MediafilesByApiKeyGet_apiKey: { value: "" },
+            MediafilesByApiKeyGet_apiKeyType: { value: "str" },
+            MediafilesByApiKeyGet_apiSecret: { value: "" },
+            MediafilesByApiKeyGet_apiSecretType: { value: "str" },
+            MediafilesByApiKeyPost_apiKey: { value: "" },
+            MediafilesByApiKeyPost_apiKeyType: { value: "str" },
+            MediafilesByApiKeyPost_apiSecret: { value: "" },
+            MediafilesByApiKeyPost_apiSecretType: { value: "str" },
+            MediafilesByApiKeyPost_name: { value: "" },
+            MediafilesByApiKeyPost_nameType: { value: "str" },
+            MediafilesByApiKeyPost_mediafile: { value: "" },
+            MediafilesByApiKeyPost_mediafileType: { value: "str" },
+            MediafilesByApiKeyDelete_apiKey: { value: "" },
+            MediafilesByApiKeyDelete_apiKeyType: { value: "str" },
+            MediafilesByApiKeyDelete_apiSecret: { value: "" },
+            MediafilesByApiKeyDelete_apiSecretType: { value: "str" },
+            MediafilesByApiKeyDelete_name: { value: "" },
+            MediafilesByApiKeyDelete_nameType: { value: "str" },
+            RecordingsByApiKeyGet_apiKey: { value: "" },
+            RecordingsByApiKeyGet_apiKeyType: { value: "str" },
+            RecordingsByApiKeyGet_apiSecret: { value: "" },
+            RecordingsByApiKeyGet_apiSecretType: { value: "str" },
+            RecordingsByApiKeyAndFileNameGet_apiKey: { value: "" },
+            RecordingsByApiKeyAndFileNameGet_apiKeyType: { value: "str" },
+            RecordingsByApiKeyAndFileNameGet_apiSecret: { value: "" },
+            RecordingsByApiKeyAndFileNameGet_apiSecretType: { value: "str" },
+            RecordingsByApiKeyAndFileNameGet_fileName: { value: "" },
+            RecordingsByApiKeyAndFileNameGet_fileNameType: { value: "str" },
+            RecordingsByApiKeyAndFileNameDelete_apiKey: { value: "" },
+            RecordingsByApiKeyAndFileNameDelete_apiKeyType: { value: "str" },
+            RecordingsByApiKeyAndFileNameDelete_apiSecret: { value: "" },
+            RecordingsByApiKeyAndFileNameDelete_apiSecretType: { value: "str" },
+            RecordingsByApiKeyAndFileNameDelete_name: { value: "" },
+            RecordingsByApiKeyAndFileNameDelete_nameType: { value: "str" },
+            RecordingsByApiKeyAndFileNameDelete_fileName: { value: "" },
+            RecordingsByApiKeyAndFileNameDelete_fileNameType: { value: "str" },
+            ValidatesByApiKeyGet_apiKey: { value: "" },
+            ValidatesByApiKeyGet_apiKeyType: { value: "str" },
+            ValidatesByApiKeyGet_apiSecret: { value: "" },
+            ValidatesByApiKeyGet_apiSecretType: { value: "str" },
+            name: { value: "" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'icon.png',
+        label: function () {
+            return this.name || "apidaze-rest-api";
+        },
+        oneditprepare: function () {
+            var selectedMethod = $('#node-input-method option:selected');
+            if (!selectedMethod.val()) {
+                var methods = $('#node-input-method').children();
+                var firstMethod = methods.first();
+                $('#node-input-method').val(firstMethod.val());
+            }
+
+            var showParameters = function () {
+
+                $("#node-input-ExternalscriptsGet_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ExternalscriptsGet_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ExternalscriptsGet_apiKey").hide();
+
+                $("#node-input-ExternalscriptsGet_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ExternalscriptsGet_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ExternalscriptsGet_apiSecret").hide();
+
+                $("#node-input-ExternalscriptsByApiKeyPost_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ExternalscriptsByApiKeyPost_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ExternalscriptsByApiKeyPost_apiKey").hide();
+
+                $("#node-input-ExternalscriptsByApiKeyPost_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ExternalscriptsByApiKeyPost_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ExternalscriptsByApiKeyPost_apiSecret").hide();
+
+                $("#node-input-ExternalscriptsByApiKeyPost_name").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ExternalscriptsByApiKeyPost_nameType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ExternalscriptsByApiKeyPost_name").hide();
+
+                $("#node-input-ExternalscriptsByApiKeyPost_url").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ExternalscriptsByApiKeyPost_urlType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ExternalscriptsByApiKeyPost_url").hide();
+
+                $("#node-input-ExternalscriptsByApiKeyAndScriptIdGet_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdGet_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ExternalscriptsByApiKeyAndScriptIdGet_apiKey").hide();
+
+                $("#node-input-ExternalscriptsByApiKeyAndScriptIdGet_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdGet_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ExternalscriptsByApiKeyAndScriptIdGet_apiSecret").hide();
+
+                $("#node-input-ExternalscriptsByApiKeyAndScriptIdGet_scriptId").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdGet_scriptIdType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ExternalscriptsByApiKeyAndScriptIdGet_scriptId").hide();
+
+                $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ExternalscriptsByApiKeyAndScriptIdPut_apiKey").hide();
+
+                $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ExternalscriptsByApiKeyAndScriptIdPut_apiSecret").hide();
+
+                $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_scriptId").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_scriptIdType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ExternalscriptsByApiKeyAndScriptIdPut_scriptId").hide();
+
+                $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_name").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_nameType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ExternalscriptsByApiKeyAndScriptIdPut_name").hide();
+
+                $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_url").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_urlType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ExternalscriptsByApiKeyAndScriptIdPut_url").hide();
+
+                $("#node-input-UnnammedEndpointDelete_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-UnnammedEndpointDelete_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#UnnammedEndpointDelete_apiKey").hide();
+
+                $("#node-input-UnnammedEndpointDelete_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-UnnammedEndpointDelete_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#UnnammedEndpointDelete_apiSecret").hide();
+
+                $("#node-input-UnnammedEndpointDelete_scriptId").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-UnnammedEndpointDelete_scriptIdType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#UnnammedEndpointDelete_scriptId").hide();
+
+                $("#node-input-UnnammedEndpointDelete_contentType").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-UnnammedEndpointDelete_contentTypeType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#UnnammedEndpointDelete_contentType").hide();
+
+                $("#node-input-UnnammedEndpointGet_destinationNumber").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-UnnammedEndpointGet_destinationNumberType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#UnnammedEndpointGet_destinationNumber").hide();
+
+                $("#node-input-UnnammedEndpointGet_callerUsername").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-UnnammedEndpointGet_callerUsernameType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#UnnammedEndpointGet_callerUsername").hide();
+
+                $("#node-input-UnnammedEndpointGet_sessionId").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-UnnammedEndpointGet_sessionIdType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#UnnammedEndpointGet_sessionId").hide();
+
+                $("#node-input-UnnammedEndpointGet_callerIdNumber").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-UnnammedEndpointGet_callerIdNumberType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#UnnammedEndpointGet_callerIdNumber").hide();
+
+                $("#node-input-UnnammedEndpointGet_uuid").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-UnnammedEndpointGet_uuidType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#UnnammedEndpointGet_uuid").hide();
+
+                $("#node-input-UnnammedEndpointGet_url").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-UnnammedEndpointGet_urlType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#UnnammedEndpointGet_url").hide();
+
+                $("#node-input-UnnammedEndpointPost_contentType").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-UnnammedEndpointPost_contentTypeType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#UnnammedEndpointPost_contentType").hide();
+
+                $("#node-input-UnnammedEndpointPost_body").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-UnnammedEndpointPost_bodyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#UnnammedEndpointPost_body").hide();
+
+                $("#node-input-SmsSendPost_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-SmsSendPost_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#SmsSendPost_apiKey").hide();
+
+                $("#node-input-SmsSendPost_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-SmsSendPost_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#SmsSendPost_apiSecret").hide();
+
+                $("#node-input-SmsSendPost_from").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-SmsSendPost_fromType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#SmsSendPost_from").hide();
+
+                $("#node-input-SmsSendPost_to").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-SmsSendPost_toType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#SmsSendPost_to").hide();
+
+                $("#node-input-SmsSendPost_body").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-SmsSendPost_bodyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#SmsSendPost_body").hide();
+
+                $("#node-input-CallsByApiKeyGet_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyGet_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyGet_apiKey").hide();
+
+                $("#node-input-CallsByApiKeyGet_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyGet_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyGet_apiSecret").hide();
+
+                $("#node-input-CallsByApiKeyPost_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyPost_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyPost_apiKey").hide();
+
+                $("#node-input-CallsByApiKeyPost_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyPost_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyPost_apiSecret").hide();
+
+                $("#node-input-CallsByApiKeyPost_callerid").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyPost_calleridType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyPost_callerid").hide();
+
+                $("#node-input-CallsByApiKeyPost_origin").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyPost_originType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyPost_origin").hide();
+
+                $("#node-input-CallsByApiKeyPost_destination").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyPost_destinationType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyPost_destination").hide();
+
+                $("#node-input-CallsByApiKeyPost_type").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyPost_typeType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyPost_type").hide();
+
+                $("#node-input-CallsByApiKeyAndUuidGet_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyAndUuidGet_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyAndUuidGet_apiKey").hide();
+
+                $("#node-input-CallsByApiKeyAndUuidGet_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyAndUuidGet_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyAndUuidGet_apiSecret").hide();
+
+                $("#node-input-CallsByApiKeyAndUuidGet_uuid").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyAndUuidGet_uuidType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyAndUuidGet_uuid").hide();
+
+                $("#node-input-CallsByApiKeyAndUuidPost_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyAndUuidPost_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyAndUuidPost_apiKey").hide();
+
+                $("#node-input-CallsByApiKeyAndUuidPost_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyAndUuidPost_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyAndUuidPost_apiSecret").hide();
+
+                $("#node-input-CallsByApiKeyAndUuidPost_url").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyAndUuidPost_urlType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyAndUuidPost_url").hide();
+
+                $("#node-input-CallsByApiKeyAndUuidPost_uuid").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-CallsByApiKeyAndUuidPost_uuidType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#CallsByApiKeyAndUuidPost_uuid").hide();
+
+                $("#node-input-MediafilesByApiKeyGet_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-MediafilesByApiKeyGet_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#MediafilesByApiKeyGet_apiKey").hide();
+
+                $("#node-input-MediafilesByApiKeyGet_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-MediafilesByApiKeyGet_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#MediafilesByApiKeyGet_apiSecret").hide();
+
+                $("#node-input-MediafilesByApiKeyPost_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-MediafilesByApiKeyPost_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#MediafilesByApiKeyPost_apiKey").hide();
+
+                $("#node-input-MediafilesByApiKeyPost_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-MediafilesByApiKeyPost_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#MediafilesByApiKeyPost_apiSecret").hide();
+
+                $("#node-input-MediafilesByApiKeyPost_name").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-MediafilesByApiKeyPost_nameType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#MediafilesByApiKeyPost_name").hide();
+
+                $("#node-input-MediafilesByApiKeyPost_mediafile").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-MediafilesByApiKeyPost_mediafileType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#MediafilesByApiKeyPost_mediafile").hide();
+
+                $("#node-input-MediafilesByApiKeyDelete_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-MediafilesByApiKeyDelete_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#MediafilesByApiKeyDelete_apiKey").hide();
+
+                $("#node-input-MediafilesByApiKeyDelete_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-MediafilesByApiKeyDelete_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#MediafilesByApiKeyDelete_apiSecret").hide();
+
+                $("#node-input-MediafilesByApiKeyDelete_name").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-MediafilesByApiKeyDelete_nameType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#MediafilesByApiKeyDelete_name").hide();
+
+                $("#node-input-RecordingsByApiKeyGet_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-RecordingsByApiKeyGet_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#RecordingsByApiKeyGet_apiKey").hide();
+
+                $("#node-input-RecordingsByApiKeyGet_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-RecordingsByApiKeyGet_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#RecordingsByApiKeyGet_apiSecret").hide();
+
+                $("#node-input-RecordingsByApiKeyAndFileNameGet_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-RecordingsByApiKeyAndFileNameGet_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#RecordingsByApiKeyAndFileNameGet_apiKey").hide();
+
+                $("#node-input-RecordingsByApiKeyAndFileNameGet_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-RecordingsByApiKeyAndFileNameGet_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#RecordingsByApiKeyAndFileNameGet_apiSecret").hide();
+
+                $("#node-input-RecordingsByApiKeyAndFileNameGet_fileName").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-RecordingsByApiKeyAndFileNameGet_fileNameType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#RecordingsByApiKeyAndFileNameGet_fileName").hide();
+
+                $("#node-input-RecordingsByApiKeyAndFileNameDelete_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-RecordingsByApiKeyAndFileNameDelete_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#RecordingsByApiKeyAndFileNameDelete_apiKey").hide();
+
+                $("#node-input-RecordingsByApiKeyAndFileNameDelete_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-RecordingsByApiKeyAndFileNameDelete_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#RecordingsByApiKeyAndFileNameDelete_apiSecret").hide();
+
+                $("#node-input-RecordingsByApiKeyAndFileNameDelete_name").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-RecordingsByApiKeyAndFileNameDelete_nameType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#RecordingsByApiKeyAndFileNameDelete_name").hide();
+
+                $("#node-input-RecordingsByApiKeyAndFileNameDelete_fileName").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-RecordingsByApiKeyAndFileNameDelete_fileNameType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#RecordingsByApiKeyAndFileNameDelete_fileName").hide();
+
+                $("#node-input-ValidatesByApiKeyGet_apiKey").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ValidatesByApiKeyGet_apiKeyType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ValidatesByApiKeyGet_apiKey").hide();
+
+                $("#node-input-ValidatesByApiKeyGet_apiSecret").typedInput({
+                    default: 'str',
+                    typeField: $("#node-input-ValidatesByApiKeyGet_apiSecretType"),
+                    types: ['str', 'msg']
+                });
+
+                $("#ValidatesByApiKeyGet_apiSecret").hide();
+
+                $("#optional-parameters").hide();
+                $("#optional-parameters-label").hide();
+                if ($("#node-input-method").val() === 'ExternalscriptsGet') {
+
+                }
+                if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyPost') {
+
+                }
+                if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyAndScriptIdGet') {
+
+                }
+                if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyAndScriptIdPut') {
+
+                }
+                if ($("#node-input-method").val() === 'UnnammedEndpointDelete') {
+
+                }
+                if ($("#node-input-method").val() === 'UnnammedEndpointGet') {
+
+                }
+                if ($("#node-input-method").val() === 'UnnammedEndpointPost') {
+
+                }
+                if ($("#node-input-method").val() === 'SmsSendPost') {
+
+                }
+                if ($("#node-input-method").val() === 'CallsByApiKeyGet') {
+
+                }
+                if ($("#node-input-method").val() === 'CallsByApiKeyPost') {
+
+                }
+                if ($("#node-input-method").val() === 'CallsByApiKeyAndUuidGet') {
+
+                }
+                if ($("#node-input-method").val() === 'CallsByApiKeyAndUuidPost') {
+
+                }
+                if ($("#node-input-method").val() === 'MediafilesByApiKeyGet') {
+
+                }
+                if ($("#node-input-method").val() === 'MediafilesByApiKeyPost') {
+
+                }
+                if ($("#node-input-method").val() === 'MediafilesByApiKeyDelete') {
+
+                }
+                if ($("#node-input-method").val() === 'RecordingsByApiKeyGet') {
+
+                }
+                if ($("#node-input-method").val() === 'RecordingsByApiKeyAndFileNameGet') {
+
+                }
+                if ($("#node-input-method").val() === 'RecordingsByApiKeyAndFileNameDelete') {
+
+                }
+                if ($("#node-input-method").val() === 'ValidatesByApiKeyGet') {
+
+                }
+
+                if ($("#optional-parameters").prop('checked')) {
+                    if ($("#node-input-method").val() === 'ExternalscriptsGet') {
+
+                        $("#ExternalscriptsGet_apiKey").show();
+                        
+                        $("#ExternalscriptsGet_apiSecret").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyPost') {
+
+                        $("#ExternalscriptsByApiKeyPost_apiKey").show();
+                        
+                        $("#ExternalscriptsByApiKeyPost_apiSecret").show();
+                        
+                        $("#ExternalscriptsByApiKeyPost_name").show();
+                        
+                        $("#ExternalscriptsByApiKeyPost_url").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyAndScriptIdGet') {
+
+                        $("#ExternalscriptsByApiKeyAndScriptIdGet_apiKey").show();
+                        
+                        $("#ExternalscriptsByApiKeyAndScriptIdGet_apiSecret").show();
+                        
+                        $("#ExternalscriptsByApiKeyAndScriptIdGet_scriptId").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyAndScriptIdPut') {
+
+                        $("#ExternalscriptsByApiKeyAndScriptIdPut_apiKey").show();
+                        
+                        $("#ExternalscriptsByApiKeyAndScriptIdPut_apiSecret").show();
+                        
+                        $("#ExternalscriptsByApiKeyAndScriptIdPut_scriptId").show();
+                        
+                        $("#ExternalscriptsByApiKeyAndScriptIdPut_name").show();
+                        
+                        $("#ExternalscriptsByApiKeyAndScriptIdPut_url").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'UnnammedEndpointDelete') {
+
+                        $("#UnnammedEndpointDelete_apiKey").show();
+                        
+                        $("#UnnammedEndpointDelete_apiSecret").show();
+                        
+                        $("#UnnammedEndpointDelete_scriptId").show();
+                        
+                        $("#UnnammedEndpointDelete_contentType").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'UnnammedEndpointGet') {
+
+                        $("#UnnammedEndpointGet_destinationNumber").show();
+                        
+                        $("#UnnammedEndpointGet_callerUsername").show();
+                        
+                        $("#UnnammedEndpointGet_sessionId").show();
+                        
+                        $("#UnnammedEndpointGet_callerIdNumber").show();
+                        
+                        $("#UnnammedEndpointGet_uuid").show();
+                        
+                        $("#UnnammedEndpointGet_url").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'UnnammedEndpointPost') {
+
+                        $("#UnnammedEndpointPost_contentType").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'SmsSendPost') {
+
+                        $("#SmsSendPost_apiKey").show();
+                        
+                        $("#SmsSendPost_apiSecret").show();
+                        
+                        $("#SmsSendPost_from").show();
+                        
+                        $("#SmsSendPost_to").show();
+                        
+                        $("#SmsSendPost_body").show();
+                    }
+                    if ($("#node-input-method").val() === 'CallsByApiKeyGet') {
+
+                        $("#CallsByApiKeyGet_apiKey").show();
+                        
+                        $("#CallsByApiKeyGet_apiSecret").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'CallsByApiKeyPost') {
+
+                        $("#CallsByApiKeyPost_apiKey").show();
+                        
+                        $("#CallsByApiKeyPost_apiSecret").show();
+                        
+                        $("#CallsByApiKeyPost_callerid").show();
+                        
+                        $("#CallsByApiKeyPost_origin").show();
+                        
+                        $("#CallsByApiKeyPost_destination").show();
+                        
+                        $("#CallsByApiKeyPost_type").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'CallsByApiKeyAndUuidGet') {
+
+                        $("#CallsByApiKeyAndUuidGet_apiKey").show();
+                        
+                        $("#CallsByApiKeyAndUuidGet_apiSecret").show();
+                        
+                        $("#CallsByApiKeyAndUuidGet_uuid").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'CallsByApiKeyAndUuidPost') {
+
+                        $("#CallsByApiKeyAndUuidPost_apiKey").show();
+                        
+                        $("#CallsByApiKeyAndUuidPost_apiSecret").show();
+                        
+                        $("#CallsByApiKeyAndUuidPost_url").show();
+                        
+                        $("#CallsByApiKeyAndUuidPost_uuid").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'MediafilesByApiKeyGet') {
+
+                        $("#MediafilesByApiKeyGet_apiKey").show();
+                        
+                        $("#MediafilesByApiKeyGet_apiSecret").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'MediafilesByApiKeyPost') {
+
+                        $("#MediafilesByApiKeyPost_apiKey").show();
+                        
+                        $("#MediafilesByApiKeyPost_apiSecret").show();
+                        
+                        $("#MediafilesByApiKeyPost_name").show();
+                        
+                        $("#MediafilesByApiKeyPost_mediafile").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'MediafilesByApiKeyDelete') {
+
+                        $("#MediafilesByApiKeyDelete_apiKey").show();
+                        
+                        $("#MediafilesByApiKeyDelete_apiSecret").show();
+                        
+                        $("#MediafilesByApiKeyDelete_name").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'RecordingsByApiKeyGet') {
+
+                        $("#RecordingsByApiKeyGet_apiKey").show();
+                        
+                        $("#RecordingsByApiKeyGet_apiSecret").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'RecordingsByApiKeyAndFileNameGet') {
+
+                        $("#RecordingsByApiKeyAndFileNameGet_apiKey").show();
+                        
+                        $("#RecordingsByApiKeyAndFileNameGet_apiSecret").show();
+                        
+                        $("#RecordingsByApiKeyAndFileNameGet_fileName").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'RecordingsByApiKeyAndFileNameDelete') {
+
+                        $("#RecordingsByApiKeyAndFileNameDelete_apiKey").show();
+                        
+                        $("#RecordingsByApiKeyAndFileNameDelete_apiSecret").show();
+                        
+                        $("#RecordingsByApiKeyAndFileNameDelete_name").show();
+                        
+                        $("#RecordingsByApiKeyAndFileNameDelete_fileName").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'ValidatesByApiKeyGet') {
+
+                        $("#ValidatesByApiKeyGet_apiKey").show();
+                        
+                        $("#ValidatesByApiKeyGet_apiSecret").show();
+                        
+                    }
+                } else {
+                    if ($("#node-input-method").val() === 'ExternalscriptsGet') {
+
+                        $("#ExternalscriptsGet_apiKey").show();
+                        
+                        $("#ExternalscriptsGet_apiSecret").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyPost') {
+
+                        $("#ExternalscriptsByApiKeyPost_apiKey").show();
+                        
+                        $("#ExternalscriptsByApiKeyPost_apiSecret").show();
+                        
+                        $("#ExternalscriptsByApiKeyPost_name").show();
+                        
+                        $("#ExternalscriptsByApiKeyPost_url").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyAndScriptIdGet') {
+
+                        $("#ExternalscriptsByApiKeyAndScriptIdGet_apiKey").show();
+                        
+                        $("#ExternalscriptsByApiKeyAndScriptIdGet_apiSecret").show();
+                        
+                        $("#ExternalscriptsByApiKeyAndScriptIdGet_scriptId").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyAndScriptIdPut') {
+
+                        $("#ExternalscriptsByApiKeyAndScriptIdPut_apiKey").show();
+                        
+                        $("#ExternalscriptsByApiKeyAndScriptIdPut_apiSecret").show();
+                        
+                        $("#ExternalscriptsByApiKeyAndScriptIdPut_scriptId").show();
+                        
+                        $("#ExternalscriptsByApiKeyAndScriptIdPut_name").show();
+                        
+                        $("#ExternalscriptsByApiKeyAndScriptIdPut_url").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'UnnammedEndpointDelete') {
+
+                        $("#UnnammedEndpointDelete_apiKey").show();
+                        
+                        $("#UnnammedEndpointDelete_apiSecret").show();
+                        
+                        $("#UnnammedEndpointDelete_scriptId").show();
+                        
+                        $("#UnnammedEndpointDelete_contentType").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'UnnammedEndpointGet') {
+
+                        $("#UnnammedEndpointGet_destinationNumber").show();
+                        
+                        $("#UnnammedEndpointGet_callerUsername").show();
+                        
+                        $("#UnnammedEndpointGet_sessionId").show();
+                        
+                        $("#UnnammedEndpointGet_callerIdNumber").show();
+                        
+                        $("#UnnammedEndpointGet_uuid").show();
+                        
+                        $("#UnnammedEndpointGet_url").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'UnnammedEndpointPost') {
+
+                        $("#UnnammedEndpointPost_contentType").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'SmsSendPost') {
+
+                        $("#SmsSendPost_apiKey").show();
+                        
+                        $("#SmsSendPost_apiSecret").show();
+                        
+                        $("#SmsSendPost_from").show();
+                        
+                        $("#SmsSendPost_to").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'CallsByApiKeyGet') {
+
+                        $("#CallsByApiKeyGet_apiKey").show();
+                        
+                        $("#CallsByApiKeyGet_apiSecret").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'CallsByApiKeyPost') {
+
+                        $("#CallsByApiKeyPost_apiKey").show();
+                        
+                        $("#CallsByApiKeyPost_apiSecret").show();
+                        
+                        $("#CallsByApiKeyPost_callerid").show();
+                        
+                        $("#CallsByApiKeyPost_origin").show();
+                        
+                        $("#CallsByApiKeyPost_destination").show();
+                        
+                        $("#CallsByApiKeyPost_type").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'CallsByApiKeyAndUuidGet') {
+
+                        $("#CallsByApiKeyAndUuidGet_apiKey").show();
+                        
+                        $("#CallsByApiKeyAndUuidGet_apiSecret").show();
+                        
+                        $("#CallsByApiKeyAndUuidGet_uuid").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'CallsByApiKeyAndUuidPost') {
+
+                        $("#CallsByApiKeyAndUuidPost_apiKey").show();
+                        
+                        $("#CallsByApiKeyAndUuidPost_apiSecret").show();
+                        
+                        $("#CallsByApiKeyAndUuidPost_url").show();
+                        
+                        $("#CallsByApiKeyAndUuidPost_uuid").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'MediafilesByApiKeyGet') {
+
+                        $("#MediafilesByApiKeyGet_apiKey").show();
+                        
+                        $("#MediafilesByApiKeyGet_apiSecret").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'MediafilesByApiKeyPost') {
+
+                        $("#MediafilesByApiKeyPost_apiKey").show();
+                        
+                        $("#MediafilesByApiKeyPost_apiSecret").show();
+                        
+                        $("#MediafilesByApiKeyPost_name").show();
+                        
+                        $("#MediafilesByApiKeyPost_mediafile").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'MediafilesByApiKeyDelete') {
+
+                        $("#MediafilesByApiKeyDelete_apiKey").show();
+                        
+                        $("#MediafilesByApiKeyDelete_apiSecret").show();
+                        
+                        $("#MediafilesByApiKeyDelete_name").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'RecordingsByApiKeyGet') {
+
+                        $("#RecordingsByApiKeyGet_apiKey").show();
+                        
+                        $("#RecordingsByApiKeyGet_apiSecret").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'RecordingsByApiKeyAndFileNameGet') {
+
+                        $("#RecordingsByApiKeyAndFileNameGet_apiKey").show();
+                        
+                        $("#RecordingsByApiKeyAndFileNameGet_apiSecret").show();
+                        
+                        $("#RecordingsByApiKeyAndFileNameGet_fileName").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'RecordingsByApiKeyAndFileNameDelete') {
+
+                        $("#RecordingsByApiKeyAndFileNameDelete_apiKey").show();
+                        
+                        $("#RecordingsByApiKeyAndFileNameDelete_apiSecret").show();
+                        
+                        $("#RecordingsByApiKeyAndFileNameDelete_name").show();
+                        
+                        $("#RecordingsByApiKeyAndFileNameDelete_fileName").show();
+                        
+                    }
+                    if ($("#node-input-method").val() === 'ValidatesByApiKeyGet') {
+
+                        $("#ValidatesByApiKeyGet_apiKey").show();
+                        
+                        $("#ValidatesByApiKeyGet_apiSecret").show();
+                        
+                    }
+                }
+            };
+
+            $("#node-input-method").change(function () {
+                showParameters();
+            });
+
+            $("#optional-parameters").change(function () {
+                showParameters();
+            });
+
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="apidaze-rest-api">
+
+    <div class="form-row">
+        <label for="node-input-method"><i class="icon-tasks"></i> <span data-i18n="ApidazeRestApi.label.method"></span></label>
+        <select id="node-input-method">
+            <option value="ExternalscriptsGet" data-i18n="ApidazeRestApi.parameters.ExternalscriptsGet"></option>
+            <option value="ExternalscriptsByApiKeyPost" data-i18n="ApidazeRestApi.parameters.ExternalscriptsByApiKeyPost"></option>
+            <option value="ExternalscriptsByApiKeyAndScriptIdGet" data-i18n="ApidazeRestApi.parameters.ExternalscriptsByApiKeyAndScriptIdGet"></option>
+            <option value="ExternalscriptsByApiKeyAndScriptIdPut" data-i18n="ApidazeRestApi.parameters.ExternalscriptsByApiKeyAndScriptIdPut"></option>
+            <option value="UnnammedEndpointDelete" data-i18n="ApidazeRestApi.parameters.UnnammedEndpointDelete"></option>
+            <option value="UnnammedEndpointGet" data-i18n="ApidazeRestApi.parameters.UnnammedEndpointGet"></option>
+            <option value="UnnammedEndpointPost" data-i18n="ApidazeRestApi.parameters.UnnammedEndpointPost"></option>
+            <option value="SmsSendPost" data-i18n="ApidazeRestApi.parameters.SmsSendPost"></option>
+            <option value="CallsByApiKeyGet" data-i18n="ApidazeRestApi.parameters.CallsByApiKeyGet"></option>
+            <option value="CallsByApiKeyPost" data-i18n="ApidazeRestApi.parameters.CallsByApiKeyPost"></option>
+            <option value="CallsByApiKeyAndUuidGet" data-i18n="ApidazeRestApi.parameters.CallsByApiKeyAndUuidGet"></option>
+            <option value="CallsByApiKeyAndUuidPost" data-i18n="ApidazeRestApi.parameters.CallsByApiKeyAndUuidPost"></option>
+            <option value="MediafilesByApiKeyGet" data-i18n="ApidazeRestApi.parameters.MediafilesByApiKeyGet"></option>
+            <option value="MediafilesByApiKeyPost" data-i18n="ApidazeRestApi.parameters.MediafilesByApiKeyPost"></option>
+            <option value="MediafilesByApiKeyDelete" data-i18n="ApidazeRestApi.parameters.MediafilesByApiKeyDelete"></option>
+            <option value="RecordingsByApiKeyGet" data-i18n="ApidazeRestApi.parameters.RecordingsByApiKeyGet"></option>
+            <option value="RecordingsByApiKeyAndFileNameGet" data-i18n="ApidazeRestApi.parameters.RecordingsByApiKeyAndFileNameGet"></option>
+            <option value="RecordingsByApiKeyAndFileNameDelete" data-i18n="ApidazeRestApi.parameters.RecordingsByApiKeyAndFileNameDelete"></option>
+            <option value="ValidatesByApiKeyGet" data-i18n="ApidazeRestApi.parameters.ValidatesByApiKeyGet"></option>
+        </select>
+        &nbsp;
+        <input type="checkbox" id="optional-parameters" style="margin-left: 10px; vertical-align: text-bottom; width: auto;">
+        <label for="optional-parameters" id="optional-parameters-label" style="width: auto;"> <span data-i18n="ApidazeRestApi.parameters.optionalParameters"></span></label>
+    </div>
+
+    <div class="form-row" id="ExternalscriptsGet_apiKey">
+        <label for="node-input-ExternalscriptsGet_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-ExternalscriptsGet_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ExternalscriptsGet_apiKeyType">
+    </div>
+
+    <div class="form-row" id="ExternalscriptsGet_apiSecret">
+        <label for="node-input-ExternalscriptsGet_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-ExternalscriptsGet_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ExternalscriptsGet_apiSecretType">
+    </div>
+
+    <div class="form-row" id="ExternalscriptsByApiKeyPost_apiKey">
+        <label for="node-input-ExternalscriptsByApiKeyPost_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-ExternalscriptsByApiKeyPost_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ExternalscriptsByApiKeyPost_apiKeyType">
+    </div>
+
+    <div class="form-row" id="ExternalscriptsByApiKeyPost_apiSecret">
+        <label for="node-input-ExternalscriptsByApiKeyPost_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-ExternalscriptsByApiKeyPost_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ExternalscriptsByApiKeyPost_apiSecretType">
+    </div>
+
+    <div class="form-row" id="ExternalscriptsByApiKeyPost_name">
+        <label for="node-input-ExternalscriptsByApiKeyPost_name"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.name"></span></label>
+
+        <input type="text" id="node-input-ExternalscriptsByApiKeyPost_name" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ExternalscriptsByApiKeyPost_nameType">
+    </div>
+
+    <div class="form-row" id="ExternalscriptsByApiKeyPost_url">
+        <label for="node-input-ExternalscriptsByApiKeyPost_url"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.url"></span></label>
+
+        <input type="text" id="node-input-ExternalscriptsByApiKeyPost_url" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ExternalscriptsByApiKeyPost_urlType">
+    </div>
+
+    <div class="form-row" id="ExternalscriptsByApiKeyAndScriptIdGet_apiKey">
+        <label for="node-input-ExternalscriptsByApiKeyAndScriptIdGet_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-ExternalscriptsByApiKeyAndScriptIdGet_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ExternalscriptsByApiKeyAndScriptIdGet_apiKeyType">
+    </div>
+
+    <div class="form-row" id="ExternalscriptsByApiKeyAndScriptIdGet_apiSecret">
+        <label for="node-input-ExternalscriptsByApiKeyAndScriptIdGet_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-ExternalscriptsByApiKeyAndScriptIdGet_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ExternalscriptsByApiKeyAndScriptIdGet_apiSecretType">
+    </div>
+
+    <div class="form-row" id="ExternalscriptsByApiKeyAndScriptIdGet_scriptId">
+        <label for="node-input-ExternalscriptsByApiKeyAndScriptIdGet_scriptId"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.scriptId"></span></label>
+
+        <input type="text" id="node-input-ExternalscriptsByApiKeyAndScriptIdGet_scriptId" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ExternalscriptsByApiKeyAndScriptIdGet_scriptIdType">
+    </div>
+
+    <div class="form-row" id="ExternalscriptsByApiKeyAndScriptIdPut_apiKey">
+        <label for="node-input-ExternalscriptsByApiKeyAndScriptIdPut_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-ExternalscriptsByApiKeyAndScriptIdPut_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ExternalscriptsByApiKeyAndScriptIdPut_apiKeyType">
+    </div>
+
+    <div class="form-row" id="ExternalscriptsByApiKeyAndScriptIdPut_apiSecret">
+        <label for="node-input-ExternalscriptsByApiKeyAndScriptIdPut_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-ExternalscriptsByApiKeyAndScriptIdPut_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ExternalscriptsByApiKeyAndScriptIdPut_apiSecretType">
+    </div>
+
+    <div class="form-row" id="ExternalscriptsByApiKeyAndScriptIdPut_scriptId">
+        <label for="node-input-ExternalscriptsByApiKeyAndScriptIdPut_scriptId"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.scriptId"></span></label>
+
+        <input type="text" id="node-input-ExternalscriptsByApiKeyAndScriptIdPut_scriptId" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ExternalscriptsByApiKeyAndScriptIdPut_scriptIdType">
+    </div>
+
+    <div class="form-row" id="ExternalscriptsByApiKeyAndScriptIdPut_name">
+        <label for="node-input-ExternalscriptsByApiKeyAndScriptIdPut_name"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.name"></span></label>
+
+        <input type="text" id="node-input-ExternalscriptsByApiKeyAndScriptIdPut_name" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ExternalscriptsByApiKeyAndScriptIdPut_nameType">
+    </div>
+
+    <div class="form-row" id="ExternalscriptsByApiKeyAndScriptIdPut_url">
+        <label for="node-input-ExternalscriptsByApiKeyAndScriptIdPut_url"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.url"></span></label>
+
+        <input type="text" id="node-input-ExternalscriptsByApiKeyAndScriptIdPut_url" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ExternalscriptsByApiKeyAndScriptIdPut_urlType">
+    </div>
+
+    <div class="form-row" id="UnnammedEndpointDelete_apiKey">
+        <label for="node-input-UnnammedEndpointDelete_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-UnnammedEndpointDelete_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-UnnammedEndpointDelete_apiKeyType">
+    </div>
+
+    <div class="form-row" id="UnnammedEndpointDelete_apiSecret">
+        <label for="node-input-UnnammedEndpointDelete_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-UnnammedEndpointDelete_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-UnnammedEndpointDelete_apiSecretType">
+    </div>
+
+    <div class="form-row" id="UnnammedEndpointDelete_scriptId">
+        <label for="node-input-UnnammedEndpointDelete_scriptId"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.scriptId"></span></label>
+
+        <input type="text" id="node-input-UnnammedEndpointDelete_scriptId" placeholder="The ID of the script." style="width:70%">
+        <input type="hidden" id="node-input-UnnammedEndpointDelete_scriptIdType">
+    </div>
+
+    <div class="form-row" id="UnnammedEndpointDelete_contentType">
+        <label for="node-input-UnnammedEndpointDelete_contentType"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.contentType"></span></label>
+
+        <input type="text" id="node-input-UnnammedEndpointDelete_contentType" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-UnnammedEndpointDelete_contentTypeType">
+    </div>
+
+    <div class="form-row" id="UnnammedEndpointGet_destinationNumber">
+        <label for="node-input-UnnammedEndpointGet_destinationNumber"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.destinationNumber"></span></label>
+
+        <input type="text" id="node-input-UnnammedEndpointGet_destinationNumber" placeholder="The number being called that belongs to your application." style="width:70%">
+        <input type="hidden" id="node-input-UnnammedEndpointGet_destinationNumberType">
+    </div>
+
+    <div class="form-row" id="UnnammedEndpointGet_callerUsername">
+        <label for="node-input-UnnammedEndpointGet_callerUsername"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.callerUsername"></span></label>
+
+        <input type="text" id="node-input-UnnammedEndpointGet_callerUsername" placeholder="The caller name, if it exists." style="width:70%">
+        <input type="hidden" id="node-input-UnnammedEndpointGet_callerUsernameType">
+    </div>
+
+    <div class="form-row" id="UnnammedEndpointGet_sessionId">
+        <label for="node-input-UnnammedEndpointGet_sessionId"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.sessionId"></span></label>
+
+        <input type="text" id="node-input-UnnammedEndpointGet_sessionId" placeholder="Session ID" style="width:70%">
+        <input type="hidden" id="node-input-UnnammedEndpointGet_sessionIdType">
+    </div>
+
+    <div class="form-row" id="UnnammedEndpointGet_callerIdNumber">
+        <label for="node-input-UnnammedEndpointGet_callerIdNumber"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.callerIdNumber"></span></label>
+
+        <input type="text" id="node-input-UnnammedEndpointGet_callerIdNumber" placeholder="The number calling your application." style="width:70%">
+        <input type="hidden" id="node-input-UnnammedEndpointGet_callerIdNumberType">
+    </div>
+
+    <div class="form-row" id="UnnammedEndpointGet_uuid">
+        <label for="node-input-UnnammedEndpointGet_uuid"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.uuid"></span></label>
+
+        <input type="text" id="node-input-UnnammedEndpointGet_uuid" placeholder="UUID of the call." style="width:70%">
+        <input type="hidden" id="node-input-UnnammedEndpointGet_uuidType">
+    </div>
+
+    <div class="form-row" id="UnnammedEndpointGet_url">
+        <label for="node-input-UnnammedEndpointGet_url"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.url"></span></label>
+
+        <input type="text" id="node-input-UnnammedEndpointGet_url" placeholder="Your external script / application URL." style="width:70%">
+        <input type="hidden" id="node-input-UnnammedEndpointGet_urlType">
+    </div>
+
+    <div class="form-row" id="UnnammedEndpointPost_contentType">
+        <label for="node-input-UnnammedEndpointPost_contentType"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.contentType"></span></label>
+
+        <input type="text" id="node-input-UnnammedEndpointPost_contentType" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-UnnammedEndpointPost_contentTypeType">
+    </div>
+
+    <div class="form-row" id="UnnammedEndpointPost_body">
+        <label for="node-input-UnnammedEndpointPost_body"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.body"></span></label>
+
+        <input type="text" id="node-input-UnnammedEndpointPost_body" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-UnnammedEndpointPost_bodyType">
+    </div>
+
+    <div class="form-row" id="SmsSendPost_apiKey">
+        <label for="node-input-SmsSendPost_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-SmsSendPost_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-SmsSendPost_apiKeyType">
+    </div>
+
+    <div class="form-row" id="SmsSendPost_apiSecret">
+        <label for="node-input-SmsSendPost_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-SmsSendPost_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-SmsSendPost_apiSecretType">
+    </div>
+
+    <div class="form-row" id="SmsSendPost_from">
+        <label for="node-input-SmsSendPost_from"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.from"></span></label>
+
+        <input type="text" id="node-input-SmsSendPost_from" placeholder="The number to send the text from. Must be an active number on your account." style="width:70%">
+        <input type="hidden" id="node-input-SmsSendPost_fromType">
+    </div>
+
+    <div class="form-row" id="SmsSendPost_to">
+        <label for="node-input-SmsSendPost_to"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.to"></span></label>
+
+        <input type="text" id="node-input-SmsSendPost_to" placeholder="Destination number (no + sign)" style="width:70%">
+        <input type="hidden" id="node-input-SmsSendPost_toType">
+    </div>
+
+    <div class="form-row" id="SmsSendPost_body">
+        <label for="node-input-SmsSendPost_body"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.body"></span></label>
+
+        <input type="text" id="node-input-SmsSendPost_body" placeholder="The message to send." style="width:70%">
+        <input type="hidden" id="node-input-SmsSendPost_bodyType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyGet_apiKey">
+        <label for="node-input-CallsByApiKeyGet_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyGet_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyGet_apiKeyType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyGet_apiSecret">
+        <label for="node-input-CallsByApiKeyGet_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyGet_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyGet_apiSecretType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyPost_apiKey">
+        <label for="node-input-CallsByApiKeyPost_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyPost_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyPost_apiKeyType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyPost_apiSecret">
+        <label for="node-input-CallsByApiKeyPost_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyPost_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyPost_apiSecretType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyPost_callerid">
+        <label for="node-input-CallsByApiKeyPost_callerid"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.callerid"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyPost_callerid" placeholder="The phone number to present as the callerid (country code included, no + sign)" style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyPost_calleridType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyPost_origin">
+        <label for="node-input-CallsByApiKeyPost_origin"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.origin"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyPost_origin" placeholder="The phone number or SIP account to ring first." style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyPost_originType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyPost_destination">
+        <label for="node-input-CallsByApiKeyPost_destination"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.destination"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyPost_destination" placeholder="The destination passed as a parameter to your External Script URL." style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyPost_destinationType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyPost_type">
+        <label for="node-input-CallsByApiKeyPost_type"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.type"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyPost_type" placeholder="The type of the terminal to ring first. Options: "number" or "sipaccount"." style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyPost_typeType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyAndUuidGet_apiKey">
+        <label for="node-input-CallsByApiKeyAndUuidGet_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyAndUuidGet_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyAndUuidGet_apiKeyType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyAndUuidGet_apiSecret">
+        <label for="node-input-CallsByApiKeyAndUuidGet_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyAndUuidGet_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyAndUuidGet_apiSecretType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyAndUuidGet_uuid">
+        <label for="node-input-CallsByApiKeyAndUuidGet_uuid"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.uuid"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyAndUuidGet_uuid" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyAndUuidGet_uuidType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyAndUuidPost_apiKey">
+        <label for="node-input-CallsByApiKeyAndUuidPost_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyAndUuidPost_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyAndUuidPost_apiKeyType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyAndUuidPost_apiSecret">
+        <label for="node-input-CallsByApiKeyAndUuidPost_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyAndUuidPost_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyAndUuidPost_apiSecretType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyAndUuidPost_url">
+        <label for="node-input-CallsByApiKeyAndUuidPost_url"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.url"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyAndUuidPost_url" placeholder="The URL to transfer the call to. Just like your ExternalScript, this URL must contain XML instructions." style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyAndUuidPost_urlType">
+    </div>
+
+    <div class="form-row" id="CallsByApiKeyAndUuidPost_uuid">
+        <label for="node-input-CallsByApiKeyAndUuidPost_uuid"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.uuid"></span></label>
+
+        <input type="text" id="node-input-CallsByApiKeyAndUuidPost_uuid" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-CallsByApiKeyAndUuidPost_uuidType">
+    </div>
+
+    <div class="form-row" id="MediafilesByApiKeyGet_apiKey">
+        <label for="node-input-MediafilesByApiKeyGet_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-MediafilesByApiKeyGet_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-MediafilesByApiKeyGet_apiKeyType">
+    </div>
+
+    <div class="form-row" id="MediafilesByApiKeyGet_apiSecret">
+        <label for="node-input-MediafilesByApiKeyGet_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-MediafilesByApiKeyGet_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-MediafilesByApiKeyGet_apiSecretType">
+    </div>
+
+    <div class="form-row" id="MediafilesByApiKeyPost_apiKey">
+        <label for="node-input-MediafilesByApiKeyPost_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-MediafilesByApiKeyPost_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-MediafilesByApiKeyPost_apiKeyType">
+    </div>
+
+    <div class="form-row" id="MediafilesByApiKeyPost_apiSecret">
+        <label for="node-input-MediafilesByApiKeyPost_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-MediafilesByApiKeyPost_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-MediafilesByApiKeyPost_apiSecretType">
+    </div>
+
+    <div class="form-row" id="MediafilesByApiKeyPost_name">
+        <label for="node-input-MediafilesByApiKeyPost_name"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.name"></span></label>
+
+        <input type="text" id="node-input-MediafilesByApiKeyPost_name" placeholder="The name of your media file." style="width:70%">
+        <input type="hidden" id="node-input-MediafilesByApiKeyPost_nameType">
+    </div>
+
+    <div class="form-row" id="MediafilesByApiKeyPost_mediafile">
+        <label for="node-input-MediafilesByApiKeyPost_mediafile"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.mediafile"></span></label>
+
+        <input type="text" id="node-input-MediafilesByApiKeyPost_mediafile" placeholder="The location of your media file." style="width:70%">
+        <input type="hidden" id="node-input-MediafilesByApiKeyPost_mediafileType">
+    </div>
+
+    <div class="form-row" id="MediafilesByApiKeyDelete_apiKey">
+        <label for="node-input-MediafilesByApiKeyDelete_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-MediafilesByApiKeyDelete_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-MediafilesByApiKeyDelete_apiKeyType">
+    </div>
+
+    <div class="form-row" id="MediafilesByApiKeyDelete_apiSecret">
+        <label for="node-input-MediafilesByApiKeyDelete_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-MediafilesByApiKeyDelete_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-MediafilesByApiKeyDelete_apiSecretType">
+    </div>
+
+    <div class="form-row" id="MediafilesByApiKeyDelete_name">
+        <label for="node-input-MediafilesByApiKeyDelete_name"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.name"></span></label>
+
+        <input type="text" id="node-input-MediafilesByApiKeyDelete_name" placeholder="Name of the media file to delete." style="width:70%">
+        <input type="hidden" id="node-input-MediafilesByApiKeyDelete_nameType">
+    </div>
+
+    <div class="form-row" id="RecordingsByApiKeyGet_apiKey">
+        <label for="node-input-RecordingsByApiKeyGet_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-RecordingsByApiKeyGet_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-RecordingsByApiKeyGet_apiKeyType">
+    </div>
+
+    <div class="form-row" id="RecordingsByApiKeyGet_apiSecret">
+        <label for="node-input-RecordingsByApiKeyGet_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-RecordingsByApiKeyGet_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-RecordingsByApiKeyGet_apiSecretType">
+    </div>
+
+    <div class="form-row" id="RecordingsByApiKeyAndFileNameGet_apiKey">
+        <label for="node-input-RecordingsByApiKeyAndFileNameGet_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-RecordingsByApiKeyAndFileNameGet_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-RecordingsByApiKeyAndFileNameGet_apiKeyType">
+    </div>
+
+    <div class="form-row" id="RecordingsByApiKeyAndFileNameGet_apiSecret">
+        <label for="node-input-RecordingsByApiKeyAndFileNameGet_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-RecordingsByApiKeyAndFileNameGet_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-RecordingsByApiKeyAndFileNameGet_apiSecretType">
+    </div>
+
+    <div class="form-row" id="RecordingsByApiKeyAndFileNameGet_fileName">
+        <label for="node-input-RecordingsByApiKeyAndFileNameGet_fileName"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.fileName"></span></label>
+
+        <input type="text" id="node-input-RecordingsByApiKeyAndFileNameGet_fileName" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-RecordingsByApiKeyAndFileNameGet_fileNameType">
+    </div>
+
+    <div class="form-row" id="RecordingsByApiKeyAndFileNameDelete_apiKey">
+        <label for="node-input-RecordingsByApiKeyAndFileNameDelete_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-RecordingsByApiKeyAndFileNameDelete_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-RecordingsByApiKeyAndFileNameDelete_apiKeyType">
+    </div>
+
+    <div class="form-row" id="RecordingsByApiKeyAndFileNameDelete_apiSecret">
+        <label for="node-input-RecordingsByApiKeyAndFileNameDelete_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-RecordingsByApiKeyAndFileNameDelete_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-RecordingsByApiKeyAndFileNameDelete_apiSecretType">
+    </div>
+
+    <div class="form-row" id="RecordingsByApiKeyAndFileNameDelete_name">
+        <label for="node-input-RecordingsByApiKeyAndFileNameDelete_name"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.name"></span></label>
+
+        <input type="text" id="node-input-RecordingsByApiKeyAndFileNameDelete_name" placeholder="Name of the media file to delete." style="width:70%">
+        <input type="hidden" id="node-input-RecordingsByApiKeyAndFileNameDelete_nameType">
+    </div>
+
+    <div class="form-row" id="RecordingsByApiKeyAndFileNameDelete_fileName">
+        <label for="node-input-RecordingsByApiKeyAndFileNameDelete_fileName"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.fileName"></span></label>
+
+        <input type="text" id="node-input-RecordingsByApiKeyAndFileNameDelete_fileName" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-RecordingsByApiKeyAndFileNameDelete_fileNameType">
+    </div>
+
+    <div class="form-row" id="ValidatesByApiKeyGet_apiKey">
+        <label for="node-input-ValidatesByApiKeyGet_apiKey"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiKey"></span></label>
+
+        <input type="text" id="node-input-ValidatesByApiKeyGet_apiKey" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ValidatesByApiKeyGet_apiKeyType">
+    </div>
+
+    <div class="form-row" id="ValidatesByApiKeyGet_apiSecret">
+        <label for="node-input-ValidatesByApiKeyGet_apiSecret"><i class="fa fa-list"></i> <span data-i18n="ApidazeRestApi.parameters.apiSecret"></span></label>
+
+        <input type="text" id="node-input-ValidatesByApiKeyGet_apiSecret" placeholder="" style="width:70%">
+        <input type="hidden" id="node-input-ValidatesByApiKeyGet_apiSecretType">
+    </div>
+
+    <hr/>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> <span data-i18n="node-red:common.label.name"></span></label>
+        <input type="text" id="node-input-name" data-i18n="[placeholder]node-red:common.label.name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="apidaze-rest-api">
+
+    <p>Apidaze is the platform powering the Voip Innovations Programmable Communications product.  For more information, please visit https://voipinnovations.com/programmable.
+
+With this REST API, you will be able to do the following:
+
+- Place and manage calls, send SMS, and send faxes 
+
+- Manage your voice prompts, retrieve recorded conversations, etc.
+
+You can find our JavaScript API and examples at https://github.com/apidaze
+
+To test API methods in Postman, click the Run in Postman button.  In the Postman App, edit the Apidaze.template in your Environments settings to reflect your api_key and api_secret.</p>
+    <h2>Methods</h2>
+        <h3>ExternalscriptsGet</h3>
+        <h4>Returns the list of the external scripts for your domain.</h4>
+        <h3>ExternalscriptsByApiKeyPost</h3>
+        <h4>Creates a new external script.
+Only one external script is allowed per domain.</h4>
+        <h3>ExternalscriptsByApiKeyAndScriptIdGet</h3>
+        <h4>Returns the External Script object details by id.</h4>
+        <h3>ExternalscriptsByApiKeyAndScriptIdPut</h3>
+        <h4>Updates an external script.</h4>
+        <h3>UnnammedEndpointDelete</h3>
+        <h4>Deletes an external script.</h4>
+        <h3>UnnammedEndpointGet</h3>
+        <h4>This is an example GET that an inbound call to your application will request to your script/application URL.</h4>
+        <h3>UnnammedEndpointPost</h3>
+        <h4>This is an example POST that an inbound SMS to your application will request to your script/application URL.  Keep in mind that if your application replies to the SMS, it must use the Send a SMS method via the REST API, not an XML response.</h4>
+        <h3>SmsSendPost</h3>
+        <h4>For an Inbound SMS example request to your configured appliction, please see this example [here](#430697e4-bfa8-ba71-926b-c7c806a1245d)</h4>
+        <h3>CallsByApiKeyGet</h3>
+        <h4>TODO: Add Description</h4>
+        <h3>CallsByApiKeyPost</h3>
+        <h4>TODO: Add Description</h4>
+        <h3>CallsByApiKeyAndUuidGet</h3>
+        <h4>TODO: Add Description</h4>
+        <h3>CallsByApiKeyAndUuidPost</h3>
+        <h4>TODO: Add Description</h4>
+        <h3>MediafilesByApiKeyGet</h3>
+        <h4>TODO: Add Description</h4>
+        <h3>MediafilesByApiKeyPost</h3>
+        <h4>TODO: Add Description</h4>
+        <h3>MediafilesByApiKeyDelete</h3>
+        <h4>TODO: Add Description</h4>
+        <h3>RecordingsByApiKeyGet</h3>
+        <h4>TODO: Add Description</h4>
+        <h3>RecordingsByApiKeyAndFileNameGet</h3>
+        <h4>TODO: Add Description</h4>
+        <h3>RecordingsByApiKeyAndFileNameDelete</h3>
+        <h4>TODO: Add Description</h4>
+        <h3>ValidatesByApiKeyGet</h3>
+        <h4>Validates your API key and secret.</h4>
+</script>
