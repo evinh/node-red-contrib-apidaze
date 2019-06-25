@@ -7,7 +7,6 @@
   ],
   "_from": "node-red-contrib-apidaze-rest-api@latest",
   "_hasShrinkwrap": false,
-  "_id": "node-red-contrib-apidaze-rest-api@1.0.0",
   "_inCache": true,
   "_installable": true,
   "_location": "/node-red-contrib-apidaze-rest-api",
@@ -37,7 +36,7 @@
   "_shrinkwrap": null,
   "_spec": "node-red-contrib-apidaze-rest-api",
   "_where": "/root/.node-red",
-  "author": "",
+  "author": "Evin Hunt",
   "dependencies": {
     "file-type": "^10.7.1",
     "q": "1.5.1",
@@ -48,7 +47,9 @@
     "node-red": "0.18.7",
     "node-red-node-test-helper": "0.1.8"
   },
-  "directories": {},
+  "directories": {
+    "test": "test"
+  },
   "dist": {
     "fileCount": 12,
     "integrity": "sha512-ef/gy3IU1a9i0ktbpsN5ij1RWukWDpeTjaCUgjiw9PXzCtwjkIA8cpNlIe/g8AXzb05/sfVE2iGIbdOtlz4Dfw==",
@@ -63,10 +64,7 @@
   "license": "Apache-2.0",
   "main": "node.js",
   "maintainers": [
-    {
-      "name": "evinh",
-      "email": "evin.hunt@gmail.com"
-    }
+    "evinh <evin.hunt@gmail.com>"
   ],
   "name": "node-red-contrib-apidaze-rest-api",
   "node-red": {
@@ -75,9 +73,16 @@
     }
   },
   "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
   "scripts": {
     "test": "mocha \"test/**/*_spec.js\""
   },
-  "version": "1.0.0"
+  "version": "1.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evinh/node-red-contrib-apidaze-rest-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/evinh/node-red-contrib-apidaze-rest-api/issues"
+  },
+  "homepage": "https://github.com/evinh/node-red-contrib-apidaze-rest-api#readme"
 }
