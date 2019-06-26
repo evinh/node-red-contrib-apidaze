@@ -1,19 +1,19 @@
 {
   "_args": [
     [
-      "node-red-contrib-apidaze-rest-api",
+      "node-red-contrib-apidaze",
       "/root/.node-red"
     ]
   ],
-  "_from": "node-red-contrib-apidaze-rest-api@latest",
+  "_from": "node-red-contrib-apidaze@latest",
   "_hasShrinkwrap": false,
   "_inCache": true,
   "_installable": true,
-  "_location": "/node-red-contrib-apidaze-rest-api",
+  "_location": "/node-red-contrib-apidaze",
   "_nodeVersion": "8.10.0",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/node-red-contrib-apidaze-rest-api_1.0.0_1561482844052_0.5443957769778032"
+    "tmp": "tmp/node-red-contrib-apidaze_1.0.0_1561482844052_0.5443957769778032"
   },
   "_npmUser": {
     "email": "evin.hunt@gmail.com",
@@ -22,8 +22,8 @@
   "_npmVersion": "3.5.2",
   "_phantomChildren": {},
   "_requested": {
-    "name": "node-red-contrib-apidaze-rest-api",
-    "raw": "node-red-contrib-apidaze-rest-api",
+    "name": "node-red-contrib-apidaze",
+    "raw": "node-red-contrib-apidaze",
     "rawSpec": "",
     "scope": null,
     "spec": "latest",
@@ -34,7 +34,7 @@
   ],
   "_shasum": "946cefc1a94b4f6abb25b2b3f016ac6abe74fd65",
   "_shrinkwrap": null,
-  "_spec": "node-red-contrib-apidaze-rest-api",
+  "_spec": "node-red-contrib-apidaze",
   "_where": "/root/.node-red",
   "author": "Evin Hunt",
   "dependencies": {
@@ -55,7 +55,7 @@
     "integrity": "sha512-ef/gy3IU1a9i0ktbpsN5ij1RWukWDpeTjaCUgjiw9PXzCtwjkIA8cpNlIe/g8AXzb05/sfVE2iGIbdOtlz4Dfw==",
     "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdElZcCRA9TVsSAnZWagAA/3sP+wSLQcChakLA8zeHfQqQ\nVd/BIeCbHN9hEAEJo5Vj7BglrzXJ6kFCY6Gp5HJPeymZ1VYLTfje0oiVMJG6\ncfkGIKWZzJ8o/1yqDOtTAncYgdZ2wro/kGqOD7MgQsLaMs2LwJUSIN0zi32k\n0BISWJOKwyiFLct7SrBuAkI+G2tmR/4Z0ENkO6IBUHcrtVo5KIcy8lr4U4Oz\nz5NOmh3ORoZU87QaZUilA1NZGAqNfzNfx3vhOY1CbSSnAL/y4CIZW21WaOuf\nPm0BxxaFQ/apdcgCZ26Ic18GB3+d1ISfN4CxQM5Ywq/Oc5VKJ0uOtZRkKtf1\nObScuY8YDa/OQhQX2xcsl/IAKTG2tomn245i0yLjcBc2z2zNszaAFCK7T6mm\ndJ94+zs03qyZ+EjOeQ5Yz5SyTZ40jjAyy18U0VaWqlEb5J/QkMpg76oCoH6I\n7XtSrzvxFYdbU4p9L229dnKZ7Q7NL7xbfXIgeswn7Brg2QDvJ5KtJVkHJtS+\nI3OYeJifjjsULPug6fkn5Wb44he+SNacX8+UaSHnFxQGZG2HOk5awrVCbpxg\nE9TC4C+9akhLn+7yvb3SebzzoiSb0U+ZNbmdzrk+/tMOnjbMcl3ucN+c+gc7\nuX4Fhaim2rAs6lT4JO2CFGQml/d2vPFa4wbMCfVroYszCSidBFNntQa+ulxe\nMtZt\r\n=KSEu\r\n-----END PGP SIGNATURE-----\r\n",
     "shasum": "946cefc1a94b4f6abb25b2b3f016ac6abe74fd65",
-    "tarball": "https://registry.npmjs.org/node-red-contrib-apidaze-rest-api/-/node-red-contrib-apidaze-rest-api-1.0.0.tgz",
+    "tarball": "https://registry.npmjs.org/node-red-contrib-apidaze/-/node-red-contrib-apidaze-1.0.0.tgz",
     "unpackedSize": 236076
   },
   "keywords": [
@@ -66,24 +66,23 @@
   "maintainers": [
     "Evin Hunt <evin.hunt@gmail.com>"
   ],
-  "name": "node-red-contrib-apidaze-rest-api",
+  "name": "node-red-contrib-apidaze",
   "node-red": {
     "nodes": {
-      "apidaze-rest-api": "node.js",
-      "color": "#C0C0C0"
+      "apidaze-rest-api": "node.js"
     }
   },
   "optionalDependencies": {},
   "scripts": {
     "test": "mocha \"test/**/*_spec.js\""
   },
-  "version": "1.0.0",
+  "version": "1.0.11",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/evinh/node-red-contrib-apidaze-rest-api.git"
+    "url": "git+https://github.com/evinh/node-red-contrib-apidaze.git"
   },
   "bugs": {
-    "url": "https://github.com/evinh/node-red-contrib-apidaze-rest-api/issues"
+    "url": "https://github.com/evinh/node-red-contrib-apidaze/issues"
   },
-  "homepage": "https://github.com/evinh/node-red-contrib-apidaze-rest-api#readme",
+  "homepage": "https://github.com/evinh/node-red-contrib-apidaze#readme"
 }

@@ -1,4 +1,4 @@
-node-red-contrib-apidaze-rest-api
+node-red-contrib-apidaze
 =====================
 
 Node-RED node for apidaze-rest-api

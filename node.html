@@ -1,7 +1,7 @@
 <script type="text/javascript">
     RED.nodes.registerType('apidaze-rest-api', {
-        category: 'function',
-        color: '#89bf04',
+        category: 'Apidaze',
+        color: '#C0C0C0',
         defaults: {
             method: { value: "", required: true },
             ExternalscriptsGet_apiKey: { value: "" },
@@ -56,16 +56,16 @@
             UnnammedEndpointPost_contentTypeType: { value: "str" },
             UnnammedEndpointPost_body: { value: "" },
             UnnammedEndpointPost_bodyType: { value: "str" },
-            SmsSendPost_apiKey: { value: "" },
-            SmsSendPost_apiKeyType: { value: "str" },
-            SmsSendPost_apiSecret: { value: "" },
-            SmsSendPost_apiSecretType: { value: "str" },
-            SmsSendPost_from: { value: "" },
-            SmsSendPost_fromType: { value: "str" },
-            SmsSendPost_to: { value: "" },
-            SmsSendPost_toType: { value: "str" },
-            SmsSendPost_body: { value: "" },
-            SmsSendPost_bodyType: { value: "str" },
+            SmsSendPost_apiKey: { value: "payload.apiKey" },
+            SmsSendPost_apiKeyType: { value: "msg" },
+            SmsSendPost_apiSecret: { value: "payload.apiSecret" },
+            SmsSendPost_apiSecretType: { value: "msg" },
+            SmsSendPost_from: { value: "payload.from" },
+            SmsSendPost_fromType: { value: "msg" },
+            SmsSendPost_to: { value: "payload.to" },
+            SmsSendPost_toType: { value: "msg" },
+            SmsSendPost_body: { value: "payload.body" },
+            SmsSendPost_bodyType: { value: "msg" },
             CallsByApiKeyGet_apiKey: { value: "" },
             CallsByApiKeyGet_apiKeyType: { value: "str" },
             CallsByApiKeyGet_apiSecret: { value: "" },
@@ -155,7 +155,7 @@
             var showParameters = function () {
 
                 $("#node-input-ExternalscriptsGet_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ExternalscriptsGet_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -163,7 +163,7 @@
                 $("#ExternalscriptsGet_apiKey").hide();
 
                 $("#node-input-ExternalscriptsGet_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ExternalscriptsGet_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -171,7 +171,7 @@
                 $("#ExternalscriptsGet_apiSecret").hide();
 
                 $("#node-input-ExternalscriptsByApiKeyPost_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ExternalscriptsByApiKeyPost_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -179,7 +179,7 @@
                 $("#ExternalscriptsByApiKeyPost_apiKey").hide();
 
                 $("#node-input-ExternalscriptsByApiKeyPost_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ExternalscriptsByApiKeyPost_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -187,7 +187,7 @@
                 $("#ExternalscriptsByApiKeyPost_apiSecret").hide();
 
                 $("#node-input-ExternalscriptsByApiKeyPost_name").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ExternalscriptsByApiKeyPost_nameType"),
                     types: ['str', 'msg']
                 });
@@ -195,7 +195,7 @@
                 $("#ExternalscriptsByApiKeyPost_name").hide();
 
                 $("#node-input-ExternalscriptsByApiKeyPost_url").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ExternalscriptsByApiKeyPost_urlType"),
                     types: ['str', 'msg']
                 });
@@ -203,7 +203,7 @@
                 $("#ExternalscriptsByApiKeyPost_url").hide();
 
                 $("#node-input-ExternalscriptsByApiKeyAndScriptIdGet_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdGet_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -211,7 +211,7 @@
                 $("#ExternalscriptsByApiKeyAndScriptIdGet_apiKey").hide();
 
                 $("#node-input-ExternalscriptsByApiKeyAndScriptIdGet_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdGet_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -219,7 +219,7 @@
                 $("#ExternalscriptsByApiKeyAndScriptIdGet_apiSecret").hide();
 
                 $("#node-input-ExternalscriptsByApiKeyAndScriptIdGet_scriptId").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdGet_scriptIdType"),
                     types: ['str', 'msg']
                 });
@@ -227,7 +227,7 @@
                 $("#ExternalscriptsByApiKeyAndScriptIdGet_scriptId").hide();
 
                 $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -235,7 +235,7 @@
                 $("#ExternalscriptsByApiKeyAndScriptIdPut_apiKey").hide();
 
                 $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -243,7 +243,7 @@
                 $("#ExternalscriptsByApiKeyAndScriptIdPut_apiSecret").hide();
 
                 $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_scriptId").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_scriptIdType"),
                     types: ['str', 'msg']
                 });
@@ -251,7 +251,7 @@
                 $("#ExternalscriptsByApiKeyAndScriptIdPut_scriptId").hide();
 
                 $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_name").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_nameType"),
                     types: ['str', 'msg']
                 });
@@ -259,7 +259,7 @@
                 $("#ExternalscriptsByApiKeyAndScriptIdPut_name").hide();
 
                 $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_url").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ExternalscriptsByApiKeyAndScriptIdPut_urlType"),
                     types: ['str', 'msg']
                 });
@@ -267,7 +267,7 @@
                 $("#ExternalscriptsByApiKeyAndScriptIdPut_url").hide();
 
                 $("#node-input-UnnammedEndpointDelete_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-UnnammedEndpointDelete_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -275,7 +275,7 @@
                 $("#UnnammedEndpointDelete_apiKey").hide();
 
                 $("#node-input-UnnammedEndpointDelete_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-UnnammedEndpointDelete_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -283,7 +283,7 @@
                 $("#UnnammedEndpointDelete_apiSecret").hide();
 
                 $("#node-input-UnnammedEndpointDelete_scriptId").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-UnnammedEndpointDelete_scriptIdType"),
                     types: ['str', 'msg']
                 });
@@ -291,7 +291,7 @@
                 $("#UnnammedEndpointDelete_scriptId").hide();
 
                 $("#node-input-UnnammedEndpointDelete_contentType").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-UnnammedEndpointDelete_contentTypeType"),
                     types: ['str', 'msg']
                 });
@@ -299,7 +299,7 @@
                 $("#UnnammedEndpointDelete_contentType").hide();
 
                 $("#node-input-UnnammedEndpointGet_destinationNumber").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-UnnammedEndpointGet_destinationNumberType"),
                     types: ['str', 'msg']
                 });
@@ -307,7 +307,7 @@
                 $("#UnnammedEndpointGet_destinationNumber").hide();
 
                 $("#node-input-UnnammedEndpointGet_callerUsername").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-UnnammedEndpointGet_callerUsernameType"),
                     types: ['str', 'msg']
                 });
@@ -315,7 +315,7 @@
                 $("#UnnammedEndpointGet_callerUsername").hide();
 
                 $("#node-input-UnnammedEndpointGet_sessionId").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-UnnammedEndpointGet_sessionIdType"),
                     types: ['str', 'msg']
                 });
@@ -323,7 +323,7 @@
                 $("#UnnammedEndpointGet_sessionId").hide();
 
                 $("#node-input-UnnammedEndpointGet_callerIdNumber").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-UnnammedEndpointGet_callerIdNumberType"),
                     types: ['str', 'msg']
                 });
@@ -331,7 +331,7 @@
                 $("#UnnammedEndpointGet_callerIdNumber").hide();
 
                 $("#node-input-UnnammedEndpointGet_uuid").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-UnnammedEndpointGet_uuidType"),
                     types: ['str', 'msg']
                 });
@@ -339,7 +339,7 @@
                 $("#UnnammedEndpointGet_uuid").hide();
 
                 $("#node-input-UnnammedEndpointGet_url").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-UnnammedEndpointGet_urlType"),
                     types: ['str', 'msg']
                 });
@@ -347,7 +347,7 @@
                 $("#UnnammedEndpointGet_url").hide();
 
                 $("#node-input-UnnammedEndpointPost_contentType").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-UnnammedEndpointPost_contentTypeType"),
                     types: ['str', 'msg']
                 });
@@ -355,7 +355,7 @@
                 $("#UnnammedEndpointPost_contentType").hide();
 
                 $("#node-input-UnnammedEndpointPost_body").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-UnnammedEndpointPost_bodyType"),
                     types: ['str', 'msg']
                 });
@@ -363,7 +363,7 @@
                 $("#UnnammedEndpointPost_body").hide();
 
                 $("#node-input-SmsSendPost_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-SmsSendPost_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -371,7 +371,7 @@
                 $("#SmsSendPost_apiKey").hide();
 
                 $("#node-input-SmsSendPost_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-SmsSendPost_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -379,7 +379,7 @@
                 $("#SmsSendPost_apiSecret").hide();
 
                 $("#node-input-SmsSendPost_from").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-SmsSendPost_fromType"),
                     types: ['str', 'msg']
                 });
@@ -387,7 +387,7 @@
                 $("#SmsSendPost_from").hide();
 
                 $("#node-input-SmsSendPost_to").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-SmsSendPost_toType"),
                     types: ['str', 'msg']
                 });
@@ -395,7 +395,7 @@
                 $("#SmsSendPost_to").hide();
 
                 $("#node-input-SmsSendPost_body").typedInput({
-                    default: 'str',
+                    default: 'msg.body',
                     typeField: $("#node-input-SmsSendPost_bodyType"),
                     types: ['str', 'msg']
                 });
@@ -403,7 +403,7 @@
                 $("#SmsSendPost_body").hide();
 
                 $("#node-input-CallsByApiKeyGet_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyGet_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -411,7 +411,7 @@
                 $("#CallsByApiKeyGet_apiKey").hide();
 
                 $("#node-input-CallsByApiKeyGet_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyGet_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -419,7 +419,7 @@
                 $("#CallsByApiKeyGet_apiSecret").hide();
 
                 $("#node-input-CallsByApiKeyPost_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyPost_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -427,7 +427,7 @@
                 $("#CallsByApiKeyPost_apiKey").hide();
 
                 $("#node-input-CallsByApiKeyPost_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyPost_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -435,7 +435,7 @@
                 $("#CallsByApiKeyPost_apiSecret").hide();
 
                 $("#node-input-CallsByApiKeyPost_callerid").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyPost_calleridType"),
                     types: ['str', 'msg']
                 });
@@ -443,7 +443,7 @@
                 $("#CallsByApiKeyPost_callerid").hide();
 
                 $("#node-input-CallsByApiKeyPost_origin").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyPost_originType"),
                     types: ['str', 'msg']
                 });
@@ -451,7 +451,7 @@
                 $("#CallsByApiKeyPost_origin").hide();
 
                 $("#node-input-CallsByApiKeyPost_destination").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyPost_destinationType"),
                     types: ['str', 'msg']
                 });
@@ -459,7 +459,7 @@
                 $("#CallsByApiKeyPost_destination").hide();
 
                 $("#node-input-CallsByApiKeyPost_type").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyPost_typeType"),
                     types: ['str', 'msg']
                 });
@@ -467,7 +467,7 @@
                 $("#CallsByApiKeyPost_type").hide();
 
                 $("#node-input-CallsByApiKeyAndUuidGet_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyAndUuidGet_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -475,7 +475,7 @@
                 $("#CallsByApiKeyAndUuidGet_apiKey").hide();
 
                 $("#node-input-CallsByApiKeyAndUuidGet_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyAndUuidGet_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -483,7 +483,7 @@
                 $("#CallsByApiKeyAndUuidGet_apiSecret").hide();
 
                 $("#node-input-CallsByApiKeyAndUuidGet_uuid").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyAndUuidGet_uuidType"),
                     types: ['str', 'msg']
                 });
@@ -491,7 +491,7 @@
                 $("#CallsByApiKeyAndUuidGet_uuid").hide();
 
                 $("#node-input-CallsByApiKeyAndUuidPost_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyAndUuidPost_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -499,7 +499,7 @@
                 $("#CallsByApiKeyAndUuidPost_apiKey").hide();
 
                 $("#node-input-CallsByApiKeyAndUuidPost_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyAndUuidPost_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -507,7 +507,7 @@
                 $("#CallsByApiKeyAndUuidPost_apiSecret").hide();
 
                 $("#node-input-CallsByApiKeyAndUuidPost_url").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyAndUuidPost_urlType"),
                     types: ['str', 'msg']
                 });
@@ -515,7 +515,7 @@
                 $("#CallsByApiKeyAndUuidPost_url").hide();
 
                 $("#node-input-CallsByApiKeyAndUuidPost_uuid").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-CallsByApiKeyAndUuidPost_uuidType"),
                     types: ['str', 'msg']
                 });
@@ -523,7 +523,7 @@
                 $("#CallsByApiKeyAndUuidPost_uuid").hide();
 
                 $("#node-input-MediafilesByApiKeyGet_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-MediafilesByApiKeyGet_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -531,7 +531,7 @@
                 $("#MediafilesByApiKeyGet_apiKey").hide();
 
                 $("#node-input-MediafilesByApiKeyGet_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-MediafilesByApiKeyGet_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -539,7 +539,7 @@
                 $("#MediafilesByApiKeyGet_apiSecret").hide();
 
                 $("#node-input-MediafilesByApiKeyPost_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-MediafilesByApiKeyPost_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -547,7 +547,7 @@
                 $("#MediafilesByApiKeyPost_apiKey").hide();
 
                 $("#node-input-MediafilesByApiKeyPost_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-MediafilesByApiKeyPost_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -555,7 +555,7 @@
                 $("#MediafilesByApiKeyPost_apiSecret").hide();
 
                 $("#node-input-MediafilesByApiKeyPost_name").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-MediafilesByApiKeyPost_nameType"),
                     types: ['str', 'msg']
                 });
@@ -563,7 +563,7 @@
                 $("#MediafilesByApiKeyPost_name").hide();
 
                 $("#node-input-MediafilesByApiKeyPost_mediafile").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-MediafilesByApiKeyPost_mediafileType"),
                     types: ['str', 'msg']
                 });
@@ -571,7 +571,7 @@
                 $("#MediafilesByApiKeyPost_mediafile").hide();
 
                 $("#node-input-MediafilesByApiKeyDelete_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-MediafilesByApiKeyDelete_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -579,7 +579,7 @@
                 $("#MediafilesByApiKeyDelete_apiKey").hide();
 
                 $("#node-input-MediafilesByApiKeyDelete_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-MediafilesByApiKeyDelete_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -587,7 +587,7 @@
                 $("#MediafilesByApiKeyDelete_apiSecret").hide();
 
                 $("#node-input-MediafilesByApiKeyDelete_name").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-MediafilesByApiKeyDelete_nameType"),
                     types: ['str', 'msg']
                 });
@@ -595,7 +595,7 @@
                 $("#MediafilesByApiKeyDelete_name").hide();
 
                 $("#node-input-RecordingsByApiKeyGet_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-RecordingsByApiKeyGet_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -603,7 +603,7 @@
                 $("#RecordingsByApiKeyGet_apiKey").hide();
 
                 $("#node-input-RecordingsByApiKeyGet_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-RecordingsByApiKeyGet_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -611,7 +611,7 @@
                 $("#RecordingsByApiKeyGet_apiSecret").hide();
 
                 $("#node-input-RecordingsByApiKeyAndFileNameGet_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-RecordingsByApiKeyAndFileNameGet_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -619,7 +619,7 @@
                 $("#RecordingsByApiKeyAndFileNameGet_apiKey").hide();
 
                 $("#node-input-RecordingsByApiKeyAndFileNameGet_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-RecordingsByApiKeyAndFileNameGet_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -627,7 +627,7 @@
                 $("#RecordingsByApiKeyAndFileNameGet_apiSecret").hide();
 
                 $("#node-input-RecordingsByApiKeyAndFileNameGet_fileName").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-RecordingsByApiKeyAndFileNameGet_fileNameType"),
                     types: ['str', 'msg']
                 });
@@ -635,7 +635,7 @@
                 $("#RecordingsByApiKeyAndFileNameGet_fileName").hide();
 
                 $("#node-input-RecordingsByApiKeyAndFileNameDelete_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-RecordingsByApiKeyAndFileNameDelete_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -643,7 +643,7 @@
                 $("#RecordingsByApiKeyAndFileNameDelete_apiKey").hide();
 
                 $("#node-input-RecordingsByApiKeyAndFileNameDelete_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-RecordingsByApiKeyAndFileNameDelete_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -651,7 +651,7 @@
                 $("#RecordingsByApiKeyAndFileNameDelete_apiSecret").hide();
 
                 $("#node-input-RecordingsByApiKeyAndFileNameDelete_name").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-RecordingsByApiKeyAndFileNameDelete_nameType"),
                     types: ['str', 'msg']
                 });
@@ -659,7 +659,7 @@
                 $("#RecordingsByApiKeyAndFileNameDelete_name").hide();
 
                 $("#node-input-RecordingsByApiKeyAndFileNameDelete_fileName").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-RecordingsByApiKeyAndFileNameDelete_fileNameType"),
                     types: ['str', 'msg']
                 });
@@ -667,7 +667,7 @@
                 $("#RecordingsByApiKeyAndFileNameDelete_fileName").hide();
 
                 $("#node-input-ValidatesByApiKeyGet_apiKey").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ValidatesByApiKeyGet_apiKeyType"),
                     types: ['str', 'msg']
                 });
@@ -675,7 +675,7 @@
                 $("#ValidatesByApiKeyGet_apiKey").hide();
 
                 $("#node-input-ValidatesByApiKeyGet_apiSecret").typedInput({
-                    default: 'str',
+                    default: 'msg',
                     typeField: $("#node-input-ValidatesByApiKeyGet_apiSecretType"),
                     types: ['str', 'msg']
                 });
@@ -746,374 +746,377 @@
                     if ($("#node-input-method").val() === 'ExternalscriptsGet') {
 
                         $("#ExternalscriptsGet_apiKey").show();
-                        
+
                         $("#ExternalscriptsGet_apiSecret").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyPost') {
 
                         $("#ExternalscriptsByApiKeyPost_apiKey").show();
-                        
+
                         $("#ExternalscriptsByApiKeyPost_apiSecret").show();
-                        
+
                         $("#ExternalscriptsByApiKeyPost_name").show();
-                        
+
                         $("#ExternalscriptsByApiKeyPost_url").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyAndScriptIdGet') {
 
                         $("#ExternalscriptsByApiKeyAndScriptIdGet_apiKey").show();
-                        
+
                         $("#ExternalscriptsByApiKeyAndScriptIdGet_apiSecret").show();
-                        
+
                         $("#ExternalscriptsByApiKeyAndScriptIdGet_scriptId").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyAndScriptIdPut') {
 
                         $("#ExternalscriptsByApiKeyAndScriptIdPut_apiKey").show();
-                        
+
                         $("#ExternalscriptsByApiKeyAndScriptIdPut_apiSecret").show();
-                        
+
                         $("#ExternalscriptsByApiKeyAndScriptIdPut_scriptId").show();
-                        
+
                         $("#ExternalscriptsByApiKeyAndScriptIdPut_name").show();
-                        
+
                         $("#ExternalscriptsByApiKeyAndScriptIdPut_url").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'UnnammedEndpointDelete') {
 
                         $("#UnnammedEndpointDelete_apiKey").show();
-                        
+
                         $("#UnnammedEndpointDelete_apiSecret").show();
-                        
+
                         $("#UnnammedEndpointDelete_scriptId").show();
-                        
+
                         $("#UnnammedEndpointDelete_contentType").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'UnnammedEndpointGet') {
 
                         $("#UnnammedEndpointGet_destinationNumber").show();
-                        
+
                         $("#UnnammedEndpointGet_callerUsername").show();
-                        
+
                         $("#UnnammedEndpointGet_sessionId").show();
-                        
+
                         $("#UnnammedEndpointGet_callerIdNumber").show();
-                        
+
                         $("#UnnammedEndpointGet_uuid").show();
-                        
+
                         $("#UnnammedEndpointGet_url").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'UnnammedEndpointPost') {
 
                         $("#UnnammedEndpointPost_contentType").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'SmsSendPost') {
 
                         $("#SmsSendPost_apiKey").show();
-                        
+
                         $("#SmsSendPost_apiSecret").show();
-                        
+
                         $("#SmsSendPost_from").show();
-                        
+
                         $("#SmsSendPost_to").show();
-                        
+
                         $("#SmsSendPost_body").show();
+
                     }
                     if ($("#node-input-method").val() === 'CallsByApiKeyGet') {
 
                         $("#CallsByApiKeyGet_apiKey").show();
-                        
+
                         $("#CallsByApiKeyGet_apiSecret").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'CallsByApiKeyPost') {
 
                         $("#CallsByApiKeyPost_apiKey").show();
-                        
+
                         $("#CallsByApiKeyPost_apiSecret").show();
-                        
+
                         $("#CallsByApiKeyPost_callerid").show();
-                        
+
                         $("#CallsByApiKeyPost_origin").show();
-                        
+
                         $("#CallsByApiKeyPost_destination").show();
-                        
+
                         $("#CallsByApiKeyPost_type").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'CallsByApiKeyAndUuidGet') {
 
                         $("#CallsByApiKeyAndUuidGet_apiKey").show();
-                        
+
                         $("#CallsByApiKeyAndUuidGet_apiSecret").show();
-                        
+
                         $("#CallsByApiKeyAndUuidGet_uuid").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'CallsByApiKeyAndUuidPost') {
 
                         $("#CallsByApiKeyAndUuidPost_apiKey").show();
-                        
+
                         $("#CallsByApiKeyAndUuidPost_apiSecret").show();
-                        
+
                         $("#CallsByApiKeyAndUuidPost_url").show();
-                        
+
                         $("#CallsByApiKeyAndUuidPost_uuid").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'MediafilesByApiKeyGet') {
 
                         $("#MediafilesByApiKeyGet_apiKey").show();
-                        
+
                         $("#MediafilesByApiKeyGet_apiSecret").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'MediafilesByApiKeyPost') {
 
                         $("#MediafilesByApiKeyPost_apiKey").show();
-                        
+
                         $("#MediafilesByApiKeyPost_apiSecret").show();
-                        
+
                         $("#MediafilesByApiKeyPost_name").show();
-                        
+
                         $("#MediafilesByApiKeyPost_mediafile").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'MediafilesByApiKeyDelete') {
 
                         $("#MediafilesByApiKeyDelete_apiKey").show();
-                        
+
                         $("#MediafilesByApiKeyDelete_apiSecret").show();
-                        
+
                         $("#MediafilesByApiKeyDelete_name").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'RecordingsByApiKeyGet') {
 
                         $("#RecordingsByApiKeyGet_apiKey").show();
-                        
+
                         $("#RecordingsByApiKeyGet_apiSecret").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'RecordingsByApiKeyAndFileNameGet') {
 
                         $("#RecordingsByApiKeyAndFileNameGet_apiKey").show();
-                        
+
                         $("#RecordingsByApiKeyAndFileNameGet_apiSecret").show();
-                        
+
                         $("#RecordingsByApiKeyAndFileNameGet_fileName").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'RecordingsByApiKeyAndFileNameDelete') {
 
                         $("#RecordingsByApiKeyAndFileNameDelete_apiKey").show();
-                        
+
                         $("#RecordingsByApiKeyAndFileNameDelete_apiSecret").show();
-                        
+
                         $("#RecordingsByApiKeyAndFileNameDelete_name").show();
-                        
+
                         $("#RecordingsByApiKeyAndFileNameDelete_fileName").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'ValidatesByApiKeyGet') {
 
                         $("#ValidatesByApiKeyGet_apiKey").show();
-                        
+
                         $("#ValidatesByApiKeyGet_apiSecret").show();
-                        
+
                     }
                 } else {
                     if ($("#node-input-method").val() === 'ExternalscriptsGet') {
 
                         $("#ExternalscriptsGet_apiKey").show();
-                        
+
                         $("#ExternalscriptsGet_apiSecret").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyPost') {
 
                         $("#ExternalscriptsByApiKeyPost_apiKey").show();
-                        
+
                         $("#ExternalscriptsByApiKeyPost_apiSecret").show();
-                        
+
                         $("#ExternalscriptsByApiKeyPost_name").show();
-                        
+
                         $("#ExternalscriptsByApiKeyPost_url").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyAndScriptIdGet') {
 
                         $("#ExternalscriptsByApiKeyAndScriptIdGet_apiKey").show();
-                        
+
                         $("#ExternalscriptsByApiKeyAndScriptIdGet_apiSecret").show();
-                        
+
                         $("#ExternalscriptsByApiKeyAndScriptIdGet_scriptId").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'ExternalscriptsByApiKeyAndScriptIdPut') {
 
                         $("#ExternalscriptsByApiKeyAndScriptIdPut_apiKey").show();
-                        
+
                         $("#ExternalscriptsByApiKeyAndScriptIdPut_apiSecret").show();
-                        
+
                         $("#ExternalscriptsByApiKeyAndScriptIdPut_scriptId").show();
-                        
+
                         $("#ExternalscriptsByApiKeyAndScriptIdPut_name").show();
-                        
+
                         $("#ExternalscriptsByApiKeyAndScriptIdPut_url").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'UnnammedEndpointDelete') {
 
                         $("#UnnammedEndpointDelete_apiKey").show();
-                        
+
                         $("#UnnammedEndpointDelete_apiSecret").show();
-                        
+
                         $("#UnnammedEndpointDelete_scriptId").show();
-                        
+
                         $("#UnnammedEndpointDelete_contentType").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'UnnammedEndpointGet') {
 
                         $("#UnnammedEndpointGet_destinationNumber").show();
-                        
+
                         $("#UnnammedEndpointGet_callerUsername").show();
-                        
+
                         $("#UnnammedEndpointGet_sessionId").show();
-                        
+
                         $("#UnnammedEndpointGet_callerIdNumber").show();
-                        
+
                         $("#UnnammedEndpointGet_uuid").show();
-                        
+
                         $("#UnnammedEndpointGet_url").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'UnnammedEndpointPost') {
 
                         $("#UnnammedEndpointPost_contentType").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'SmsSendPost') {
 
                         $("#SmsSendPost_apiKey").show();
-                        
+
                         $("#SmsSendPost_apiSecret").show();
-                        
+
                         $("#SmsSendPost_from").show();
-                        
+
                         $("#SmsSendPost_to").show();
-                        
+
+                        $("#SmsSendPost_body").show();
+
                     }
                     if ($("#node-input-method").val() === 'CallsByApiKeyGet') {
 
                         $("#CallsByApiKeyGet_apiKey").show();
-                        
+
                         $("#CallsByApiKeyGet_apiSecret").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'CallsByApiKeyPost') {
 
                         $("#CallsByApiKeyPost_apiKey").show();
-                        
+
                         $("#CallsByApiKeyPost_apiSecret").show();
-                        
+
                         $("#CallsByApiKeyPost_callerid").show();
-                        
+
                         $("#CallsByApiKeyPost_origin").show();
-                        
+
                         $("#CallsByApiKeyPost_destination").show();
-                        
+
                         $("#CallsByApiKeyPost_type").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'CallsByApiKeyAndUuidGet') {
 
                         $("#CallsByApiKeyAndUuidGet_apiKey").show();
-                        
+
                         $("#CallsByApiKeyAndUuidGet_apiSecret").show();
-                        
+
                         $("#CallsByApiKeyAndUuidGet_uuid").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'CallsByApiKeyAndUuidPost') {
 
                         $("#CallsByApiKeyAndUuidPost_apiKey").show();
-                        
+
                         $("#CallsByApiKeyAndUuidPost_apiSecret").show();
-                        
+
                         $("#CallsByApiKeyAndUuidPost_url").show();
-                        
+
                         $("#CallsByApiKeyAndUuidPost_uuid").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'MediafilesByApiKeyGet') {
 
                         $("#MediafilesByApiKeyGet_apiKey").show();
-                        
+
                         $("#MediafilesByApiKeyGet_apiSecret").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'MediafilesByApiKeyPost') {
 
                         $("#MediafilesByApiKeyPost_apiKey").show();
-                        
+
                         $("#MediafilesByApiKeyPost_apiSecret").show();
-                        
+
                         $("#MediafilesByApiKeyPost_name").show();
-                        
+
                         $("#MediafilesByApiKeyPost_mediafile").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'MediafilesByApiKeyDelete') {
 
                         $("#MediafilesByApiKeyDelete_apiKey").show();
-                        
+
                         $("#MediafilesByApiKeyDelete_apiSecret").show();
-                        
+
                         $("#MediafilesByApiKeyDelete_name").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'RecordingsByApiKeyGet') {
 
                         $("#RecordingsByApiKeyGet_apiKey").show();
-                        
+
                         $("#RecordingsByApiKeyGet_apiSecret").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'RecordingsByApiKeyAndFileNameGet') {
 
                         $("#RecordingsByApiKeyAndFileNameGet_apiKey").show();
-                        
+
                         $("#RecordingsByApiKeyAndFileNameGet_apiSecret").show();
-                        
+
                         $("#RecordingsByApiKeyAndFileNameGet_fileName").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'RecordingsByApiKeyAndFileNameDelete') {
 
                         $("#RecordingsByApiKeyAndFileNameDelete_apiKey").show();
-                        
+
                         $("#RecordingsByApiKeyAndFileNameDelete_apiSecret").show();
-                        
+
                         $("#RecordingsByApiKeyAndFileNameDelete_name").show();
-                        
+
                         $("#RecordingsByApiKeyAndFileNameDelete_fileName").show();
-                        
+
                     }
                     if ($("#node-input-method").val() === 'ValidatesByApiKeyGet') {
 
                         $("#ValidatesByApiKeyGet_apiKey").show();
-                        
+
                         $("#ValidatesByApiKeyGet_apiSecret").show();
-                        
+
                     }
                 }
             };
@@ -1635,7 +1638,7 @@
 
 With this REST API, you will be able to do the following:
 
-- Place and manage calls, send SMS, and send faxes 
+- Place and manage calls, send SMS, and send faxes
 
 - Manage your voice prompts, retrieve recorded conversations, etc.
 
